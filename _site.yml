@@ -54,19 +54,19 @@ navbar:
           href: 
         - text: "Exercise 3 : Building your own Rmarkdown document"
           href: 
-        - text: "Exercise 3: Writing reproducible documents - Solutions"
+        - text: "Exercise 4: Writing reproducible documents - Solutions"
           href: 
-        - text: "Exercise 4: Version control Git and Github"
+        - text: "Exercise 5: Version control Git and Github"
           href: 
-        - text: "Exercise 5 data bbrom"
-          href: 
-        - text: "Exercise 6:"
+        - text: "Exercise 6 data bbrom"
           href: 
         - text: "Exercise 7:"
           href: 
         - text: "Exercise 8:"
           href: 
-        - text: "Exeercise 9:"
+        - text: "Exercise 9:"
+          href: 
+        - text: "Exeercise 10:"
           href: 
     - icon: fab fa-github
       href: https://github.com/dossag
