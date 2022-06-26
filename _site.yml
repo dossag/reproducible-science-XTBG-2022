@@ -40,28 +40,28 @@ navbar:
     - text: "Worksheets"
       menu:
         - text: "Exercise 1: Tidyverse data manipulation"
-          href: Exercise_1_Tidyverse_Data_manipulation.html
+          href: 
         - text: "Exercise 1: Tidyverse data manipulation - Solutions"
-          href: Excercise_1_Data_manipulation_solution.html
+          href: 
         - text: "Exercise 2: Tidyverse ggplot2 data visualisation"
-          href: Exercise_2_datavisualisation.html
+          href: 
         - text: "Exercise 2: Tidyverse ggplot2 data visualisation - Solutions"
-          href: Exercise_2_datavisualisation_solution.html
+          href: 
         - text: "Exercise 3 : Building your own Rmarkdown document"
-          href: Exercise_3_Building_your_own_RMardown.html
+          href: 
         - text: "Exercise 3: Writing reproducible documents - Solutions"
-          href: Exercise_3_Building_your_own_RMardown_solution.html
+          href: 
         - text: "Exercise 4: Version control Git and Github"
-          href: Exercise_4_Version_control_git_github.html
-        - text: "Exercise 4 data bbrom"
-          href: bbmroData.csv
-        - text: "Exercise 4: Writing reproducible documents - Html output"
           href: 
-        - text: "Practical 3: Writing reproducible documents - PDF output"
+        - text: "Exercise 5 data bbrom"
           href: 
-        - text: "Practical 3: Writing reproducible documents - Word output"
+        - text: "Exercise 6:"
           href: 
-        - text: "Practical 4: Version control"
+        - text: "Exercise 7:"
+          href: 
+        - text: "Exercise 8:"
+          href: 
+        - text: "Exeercise 9:"
           href: 
     - icon: fab fa-github
       href: https://github.com/dossag
