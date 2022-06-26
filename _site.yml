@@ -54,10 +54,16 @@ navbar:
           href: 
         - text: "Exercise 3 : Building your own Rmarkdown document"
           href: 
+        - text: "Exercise 3 : Building your own Rmarkdown document - Solutions"
+          href: 
+        - text: "Exercise 4: Writing reproducible documents"
+          href: 
         - text: "Exercise 4: Writing reproducible documents - Solutions"
           href: 
         - text: "Exercise 5: Version control Git and Github"
           href: 
+        - text: "Exercise 5: Version control Git and Github - Solutions"
+          href:
         - text: "Exercise 6 data bbrom"
           href: 
         - text: "Exercise 7:"
