@@ -1,6 +1,6 @@
-name: "reproducible-science-afec-XTBG-2021"
-title: "Reproducible science afec @ XTBG 2021"
-description: "A two-day afec on Reproducible science"
+name: "reproducible-science-XTBG-2022"
+title: "Reproducible science @ XTBG 2022"
+description: "A four-day workshop on Reproducible science"
 output_dir: "docs"
 theme: "theme.css"
 #repository_url: https://github.com/wilkelab/SDS375

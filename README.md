@@ -1,7 +1,7 @@
-# Reproducible science afec XTBG 2021
+# Reproducible science XTBG 2022
 
 This repository holds the source materials used at 
-https://dossag.github.io/reproducible-science-afec-x-2021
+https://dossag.github.io/reproducible-science-XTBG-2022
  
 ## Reuse
 
