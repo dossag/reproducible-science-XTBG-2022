@@ -1,7 +1,7 @@
 ---
 title: "Reproducible science: Module 3"
 subtitle: "Dealing with data: Tidyverse"
-author: "[Gbadamassi G.O. Dossa](https://scholar.google.com/citations?user=w20AkZcAAAAJ&hl=en)"
+author: "[Gbadamassi G.O. Dossa](dossa@xtbg.org.cn)"
 institute: "Xishuangbanna Tropical Botanical Garden, XTBG-CAS"
 date: "2021/09/25 (updated: `r Sys.Date()`)"
 output:
@@ -282,8 +282,8 @@ class: center
 
 # Piping: Make your manipulations easier
 
-Piping was borrowed from other languages (), got incorporated into R after a question in [Pipe question](https://stackoverflow.com/questions/8896820/how-to-implement-fs-forward-pipe-operator-in-r) in 2012.
-Pipe which is the bar "|" on your...
+Piping was borrowed from other languages, got incorporated into R after a question in [Pipe question](https://stackoverflow.com/questions/8896820/how-to-implement-fs-forward-pipe-operator-in-r) in 2012.
+Pipe which is the bar "|" on your keyboard.
 
 ---
 class: center
