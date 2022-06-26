@@ -37,6 +37,11 @@ navbar:
           href: 
         - text: "Module9: Reproducible: Good enough workflow"
           href: 
+        - text: "Module10: Reproducible: Good enough workflow"
+          href: 
+        - text: "Module11: Extras (Writing article in R markdown, Quarto (If time permits))"
+          href: 
+        
     - text: "Worksheets"
       menu:
         - text: "Exercise 1: Tidyverse data manipulation"
