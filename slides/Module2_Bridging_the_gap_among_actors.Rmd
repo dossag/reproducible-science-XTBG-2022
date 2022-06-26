@@ -1,7 +1,7 @@
 ---
 title: "Reproducible science: Module2"
 subtitle: "Bridging the gap among actors"
-author: "[Gbadamassi G.O. Dossa](https://scholar.google.com/citations?user=w20AkZcAAAAJ&hl=en)"
+author: "[Gbadamassi G.O. Dossa](dossa@xtbg.org.cn)"
 institute: "Xishuangbanna Tropical Botanical Garden, XTBG-CAS"
 date: "2021/09/20 (updated: `r Sys.Date()`)"
 output:
