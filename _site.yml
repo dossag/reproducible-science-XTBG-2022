@@ -9,6 +9,7 @@ navbar:
 #  logo:
 #    image: images/cefe.png #
 #    href: https://www.cefe.cnrs.fr/en/
+# 
   source_url: true
   left:
   right:
@@ -21,17 +22,17 @@ navbar:
         - text: "Module2 Bridging the gap among actors"
           href: slides/Module2_Bridging_the_gap_among_actors.html
         - text: "Module3: Data analysis with tidyverse"
-          href: slides/Module3_Dealing_with_data_analysis.html
+          href: 
         - text: "Module4: Data visualisation"
-          href: slides/Module4_Data_visualization_ggplot2.html
+          href: 
         - text: "Module5: Literate statistical programming: `knitr`"
-          href: slides/Module5_Literate_statistical_programming_knitr.html
+          href: 
         - text: "Module6: R Markdown"
-          href: slides/Module6_markdown.html
+          href: 
         - text: "Module7: Version control Git and Github"
-          href: slides/Module7_Version_control_git_github.html
+          href: 
         - text: "Module7_extra: Extra class on git and Github"
-          href: slides/Module7_extra.pdf
+          href: 
         - text: "Module8: R project"
           href: 
         - text: "Module9: Reproducible: Good enough workflow"
