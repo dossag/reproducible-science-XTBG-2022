@@ -1,7 +1,7 @@
 ---
 title: "Reproducible science: Module1"
-subtitle: "Launching workshop presentation"
-author: "[Gbadamassi G.O. Dossa (dossa@xtbg.org.cn)](https://scholar.google.com/citations?user=w20AkZcAAAAJ&hl=en)"
+subtitle: "Launching workshop-Replication and reproducibility"
+author: "[Gbadamassi G.O. Dossa](dossa@xtbg.org.cn)"
 institute: "Xishuangbanna Tropical Botanical Garden, XTBG-CAS"
 date: "2021/09/13 (updated: `r Sys.Date()`)"
 output:

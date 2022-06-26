@@ -40,7 +40,7 @@ Anyone who carries out research either as student, or research staff and seeks g
 
 # Timeline
 
-* Module 1: Motivations and intro [[Module1](slides/Module1_introduction.html)]]
+* Module 1: Launching workshop-Replication and reproducibility [[Module1](slides/Module1_introduction.html)| [solutions]() | [video]()]
 * Module 2: Bridging the gap among actors| [video]()] [[Module2](slides/Module2_Bridging_the_gap_among_actors.html) | [video]()]
 * Module 3: Dealing with data analysis in the `tidyverse` [[Module3]() | [Exercise]() | [solutions](Excercise_1_Data_manipulation_solution.html) | [video]()]
 * Module 4: Dealing with data analysis in the `tidyverse` using `ggplot2` [[Module4](slides/Module4_Data_visualization_ggplot2.html) | [Exercise]() | [solutions]() | [video]()]

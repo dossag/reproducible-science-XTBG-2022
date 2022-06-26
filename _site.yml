@@ -17,7 +17,7 @@ navbar:
       href: index.html
     - text: "Slides"
       menu:
-        - text: "Module1:Motivations and intro"
+        - text: "Module1: Launching workshop-Replication and reproducibility"
           href: slides/Module1_introduction.html
         - text: "Module2 Bridging the gap among actors"
           href: slides/Module2_Bridging_the_gap_among_actors.html
