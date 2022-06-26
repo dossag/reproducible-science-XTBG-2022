@@ -1,0 +1,435 @@
+---
+title: "Introduction to Git and GitHub with RStudio"
+author: "[Gbadamassi G.O. Dossa](https://scholar.google.com/citations?user=w20AkZcAAAAJ&hl=en)"
+date: "last updated: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+   # css: [default, metropolis, assets/css/footer.css, metropolis-fonts, assets/css/metropolis-ak_dc.css]
+    lib_dir: libs
+    nature:
+      beforeInit: "https://platform.twitter.com/widgets.js"
+      highlightStyle: github
+      #titleSlideClass: [middle, left]
+      highlightLines: true
+      countIncrementalSlides: true
+---
+layout: true
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(magrittr)
+```
+
+
+class: center
+# Acknowledgements
+The content of this module are based on materials from:
+
+.pull-right[
+![olivier gimenez](img/oliviergimenez.png)
+]
+.pull-right[
+[olivier gimenez's materials](https://oliviergimenez.github.io/)
+]
+
+---
+# Credits
+
+* Many slides from [Anna Krystalli](https://annakrystalli.me/about/)
+
+.center[![](img/annakrystalli.jpg)]
+
+---
+
+# Rings a bell? 
+
+<center>
+
+<img src="http://www.phdcomics.com/comics/archive/phd101212s.gif" height="500px">
+ 
+</center>
+ 
+
+
+---
+
+# Version Control
+
+### What is it? 
+
+The **management of changes** to documents, computer programs,  websites, etc...
+
+### Git <img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" height="25px" >
+
+Free to use **version control software**
+
+If Dropbox and the "Track changes" feature in MS Word had a baby, that would be Git (Alexa Fredston)
+
+### GitHub <img src="https://raw.githubusercontent.com/annakrystalli/rrresearch/master/docs/assets/github_logo.jpg" height="30px">
+
+A **website** (https://github.com/) to **store your Git repositories online** and makes it easy to collaborate with others
+
+You do not need GitHub to use Git, just like you do not need RStudio to run R (Alexa Fredston)
+
+
+---
+# [Why use version control?](https://stackoverflow.com/questions/1408450/why-should-i-use-version-control/1408464#1408464)
+
+.center[
+![](img/why-vc.png)
+]
+
+
+
+---
+
+# Git, Github & RStudio
+
+#### Before: Git only through the terminal `r emo::ji("cry")`
+
+--
+
+***
+
+## Now RStudio allows using `Git` & `GitHub` `r emo::ji("star_struck")`
+
+.center[
+![](https://media.giphy.com/media/GA2FNpP1kAQNi/giphy.gif)
+]
+
+
+---
+# Configure Git & GitHub
+
+### Configure Git
+
+**Check your configuration**
+
+```{r, eval = FALSE}
+usethis::git_sitrep()
+```
+
+**Set your configuration**
+
+Use your github username and the email you used to sign-up on GitHub
+
+```{r, eval = FALSE}
+usethis::use_git_config(
+    user.name = "oliviergimenez",
+    user.email = "olivier.gimenez@cefe.cnrs.fr")
+```
+
+---
+# Configure GitHub authentication
+
+### Get GITHUB Personal Authorisation Token
+
+```{r, eval = F}
+usethis::create_github_token()
+```
+
+
+<img src="assets/browse_github.png" height="300px">
+
+---
+
+### Store in `.Renviron` file
+
+```{r, eval = F}
+usethis::edit_r_environ()
+```
+
+<img src="assets/GITHUB_PAT.png" height="400px">
+
+
+
+---
+
+# RStudio Projects
+
+## Use RStudio projects to keep materials associated with a particular analysis together
+
+<br>
+ 
+.pull-left[
+- **Self contained** and **portable**
+- **Working directory set to root** of project on launch
+- **Fresh session** everytime the project is launched
+
+See Jenny Bryan's post on [**project oriented workflows**](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/) for more details
+]
+
+.pull-right.center[
+
+**File > New Project > New Directory**
+
+<img src="assets/new_project.png" height=200px>
+]
+
+
+
+---
+# Initialise git
+
+
+### Initialise **RStudio project** with Git by **just checking a box!**
+
+It's now **a repository**
+
+<img src="assets/project_git.png" height="200px">
+
+
+
+
+---
+# Git panel
+
+## Integrated graphical user interface
+
+<br>
+
+.center[
+<img src="assets/git_tab.png" height="300px">
+]
+
+
+---
+# Git terms
+
+* **repository** your project folder
+<br>
+* **commit** a snapshot of your repo
+<br>
+* **push** send commits to a remote
+<br>
+* **pull** get commits from a remote
+
+<br>
+
+* (*clone* get the repository from the remote for the first time)
+* (*branch* a movable label that points to a commit)
+* (*merge* combining two branches)
+* (*remote* a computer with the repository on it)
+
+---
+# Git RStudio workflow
+
+.pull-left[
+#### view file status
+<img src="assets/git_view.png" height="150px">
+
+#### stage files
+<img src="assets/git_add.png" height="150px">
+]
+
+.pull-right[
+#### commit changes
+<img src="assets/git_commit.png" width="600px">
+]
+---
+
+# Share on GitHub
+
+#### Create repo
+
+Via GitHub or using package `usethis` w/ `usethis::use_github(protocol = "https")`
+
+<img src="assets/my_awesome_repo.png" width="750px">
+
+#### Push further changes
+
+<img src="assets/push_github.png" height="50px">
+
+
+---
+
+# Anatomy of a GitHub repo
+
+- **`README`**. Explain what your project is, and how to use it. 
+  + `usethis::use_readme_md()`
+  + `usethis::use_readme_rmd()`
+
+- **`LICENSE`**. Without a licence, the contents of the repository are technically closed. 
+  + Examples licence [MIT](https://tldrlegal.com/license/mit-license): `usethis::use_mit_license(name = "Olivier Gimenez")`
+  + `?licenses`: details of functions available to generate licenses
+  + [https://choosealicense.com/](https://choosealicense.com/) help on choosing a licence.
+
+    
+---
+
+# Anatomy of a GitHub repo
+
+
+- **`CONTRIBUTING.md`** - guidelines for contributors.
+  + `usethis::use_tidy_contributing()` provides a realtively strict but instructive template
+
+- **`CODE_OF_CONDUCT.md`** set the tone for discourse between contributors. 
+  + `use_code_of_conduct()`
+
+
+---
+# GitHub issues
+
+### Use so-called issues to plan, record and discuss tasks
+
+<img src="assets/github_issues.png" width="800px">
+
+---
+
+# Why using a remote like GitHub ?
+
+* A backup of your repository
+
+* Keep track of all changes, and possibility to rollback to a previous state
+
+* Increase your visibility 
+
+* Easy distribution of packages (without CRAN submissions)
+
+* Work with others (not [fully] covered)
+
+* Increase interactions with users (issues, pull requests)
+
+
+---
+
+# Working with others
+
+* Use issues to talk to repo holders: propose changes, report bugs, etc...
+
+* If you're a collaborator, clone the repo, do modifications and push them
+* If you're not a collaborator, fork, clone then use pull requests
+
+* Branches allow playing around without messing around with the main line of development
+    + Allow exploring several versions of an idea, and switching between them
+    + A branch should correspond to a bug fix, a new feature, etc.
+    + Useful when unsure when/if some modifications will be included
+
+.center[
+<img src="assets/git-branches-merge.png" height="150px">
+]
+
+* Resolving conflicts: see practical
+
+---
+# Further reading
+
+* The bible: [Happy Git and GitHub for the useR](https://happygitwithr.com/)
+
+* See also: [Hadley Wickham R packages book](https://r-pkgs.org/git.html)
+
+* And in French: [Travailler avec Git via RStudio et versionner son code](https://thinkr.fr/travailler-avec-git-via-rstudio-et-versionner-son-code/)
+
+---
+# My two-cent workflow
+
+<br><br>
+
+<center>
+
+<img src="img/mytwocents.gif">
+ 
+</center>
+
+
+
+---
+# Create a new repository on GitHub
+
+<br><br>
+
+<center>
+
+<img src="img/new-repo-in-github.png">
+ 
+</center>
+
+---
+# Name and Public/Private
+
+<center>
+
+<img src="img/create-new-repo.png">
+ 
+</center>
+
+
+---
+# Copy https
+
+<br><br>
+
+<center>
+
+<img src="img/https.png">
+ 
+</center>
+
+
+---
+# In RStudio, File/New Project
+
+<br><br>
+
+<center>
+
+<img src="img/pull-down-new-project.png">
+ 
+</center>
+
+
+---
+# Select Version Control
+
+<br>
+
+<center>
+
+<img src="img/create-project.png">
+ 
+</center>
+
+
+---
+# Select Git
+
+<br><br>
+
+<center>
+
+<img src="img/create-project-vc.png">
+ 
+</center>
+
+
+---
+# Clone your repo (remote to local)
+
+<center>
+
+<img src="img/clone-git-repo.png">
+ 
+</center>
+
+
+---
+# Stage, commit and push
+
+<br><br>
+
+<center>
+
+<img src="img/files-rstudio.png">
+ 
+</center>
+
+---
+# Alternative is to go local first
+
+<br>
+
+* Step 1: Use RStudio projects (possibility to create a project from an existing directory)
+
+* Step 2: `usethis::use_git()` and follow instructions
+
+* Step 3: `usethis::use_github()` and follow instructions

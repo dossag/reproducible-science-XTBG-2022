@@ -1,0 +1,97 @@
+---
+title: "Reproducible science afec XTBG 2021"
+description: "A two-day module on reproducible science"
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating websites with Distill at:
+# https://rstudio.github.io/distill/website.html
+
+# Learn more about publishing to GitHub Pages at:
+# https://rstudio.github.io/distill/publish_website.html#github-pages
+
+```
+
+# Basic info
+
+Who: [G.G.O Dossa](https://dossag.github.io/)  
+When: 9am-5:30 pm every day from November 2-3, 2021  
+Where: [XTBG](http://english.xtbg.cas.cn/)  
+<!-- Syllabus: [click here](syllabus.html)   -->
+<!-- Upcoming Modules and assignments: [click here](schedule.html)   -->
+
+# Workshop introduction
+
+The following is the tentative outline of a two day workshop that will be held in Xishuangbanna Tropical Botanical Garden [(XTBG)](http://english.xtbg.cas.cn/) from **November 02-03 2021**. The purpose of this workshop is to get participants familiar with the concept of ***reproducible science*** that is surprisingly not commonly taught but which is becoming a requirement for better collaboration (not only with others but with oneself through time) and for credible science. At the end of this workshop, attendees should be familiar with tools use to achieve reproducible science, will be more confident with themselves, and be inclined to adopt these tools which will ease their collaboration with themselves as well as others. This course consists of four main parts which aim to putting everything from data to final report including r code and some interpretations and also exercises as step by step work me through method. This course will be mainly taught by Dossa G.G.O. [click here to email me](mailto:dossa@xtbg.org.cn). Dossa teaches this section yearly at the postgraduate Advanced Fieldcourse in Ecology and Conservation -- XTBG [AFEC-X](https://www.pfs-tropasia.org/) for the past two years.
+
+***Who should attend this course?***
+
+Anyone who carries out research either as student, or research staff and seeks guidance to manage data efficiently, to improve peers credibility in their research output, and is keen to make science solid and credible. Consider thinking about the following questions:
+
+-   Have you ever worked collaboratively with others, and received multiple comments that you needed to deal with?
+-   Have you been ever asked by your collaborators/supervisor to go back to previous version of your manuscripts/analysis/ results?
+-   Have you ever thought that you finalized an analysis but to realize a mistake was in the data file?
+-   Have you ever spent endless time to explain your past / current projects to your collaborators (including yourself) but realize you even do not remember what you did at some point or why you did certain things?
+-   Have you ever copied a table from R/SPSS/Minitab/SAS to excel, and subsequently from Excel to your word processing document? And most annoyingly, you need to repeat these steps whenever anything has changed in the analysis or code.
+
+
+# Timeline
+
+* Motivations and intro [[Module1](slides/Module1_introduction.html)]]
+* Bridging the gap among actors| [video]()] [[Module2](slides/Module2_Bridging_the_gap_among_actors.html) | [video]()]
+* Dealing with data analysis in the `tidyverse` [[Module3](slides/Module3_Dealing_with_data_analysis.html) | [Exercise](Exercise_1_Tidyverse_Data_manipulation.html) | [solutions](Excercise_1_Data_manipulation_solution.html) | [video]()]
+* Dealing with data analysis in the `tidyverse` using `ggplot2` [[Module4](slides/Module4_Data_visualization_ggplot2.html) | [Exercise](Exercise_2_datavisualisation.html) | [solutions](Exercise_2_datavisualisation_solution.html) | [video]()]
+* Literate statistical programming: `knitr` [[Module5](slides/Module5_Literate_statistical_programming_knitr.html) | [Exercise](Exercise_3_Building_your_own_RMardown.html) | [solutions](Exercise_3_Building_your_own_RMardown_solution.html) | [video]()]
+* R Markdown [[Module6](slides/Module6_markdown.html) | [practical](Exercise_3_Building_your_own_RMardown.html) | [solutions](Exercise_3_Building_your_own_RMardown_solution.html) | [video]()]
+* Version control Git and Github [[Module7](slides/Module7_Version_control_git_github.html) | [practical](Exercise_4_Version_control_git_github.html) | [solutions]() | [video]()]
+* Extra class on git and Github [[Module7_extra](slides/Module7_Version_control_git_github.html) | [practical](slides/Module7_extra.pdf) | [solutions]() | [video]()]
+* Module8: R project [[Module]() | [practical]() | [video]()]
+* Module9: Reproducible: Good enough workflow [[Module]() | [video]()]
+
+
+# Requirements
+
+Attendees are required to install the following software beforehand
+
+1-	[Git](https://git-scm.com/downloads)
+
+2-	[Create a Github account on](https://github.com/)
+
+3-	[Download a Github desktop](https://desktop.github.com/)
+
+4-	[Download and install R](https://cran.r-project.org/)
+
+5-	[Download RStudio](https://www.rstudio.com/products/rstudio/download/)
+
+6- Have Git, GitHub and RStudio talk to each other following [these guidelines (section 2.2.2 Configuration only)](https://inbo.github.io/git-course/course_rstudio.html#222_configuration).
+
+7- Install the following `R` packages: `tidyverse`, `sf`, `emo`, `janitor`, `palmerpenguins`, `usethis` and `lubridate.` You can install them all at once by running the following code in the `R` command line:
+
+```{r eval = FALSE, echo = TRUE}
+install.packages(c("tidyverse", "sf", "emo", "janitor", "palmerpenguins", "usethis", "lubridate"))
+```
+
+Below are books you can read at your spare time not required to read before the course.
+
+
+8-	[Book about  Github](https://orchid00.github.io/actions_sandbox/)
+
+9-	[Ggplot2 second edition](https://r-graphics.org/)
+
+10-	[R Markdown book](https://bookdown.org/yihui/rmarkdown-cookbook/)
+
+Also kindly read the two following documents prior to start of the workshop: (i) [***Five selfish reasons***](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7) and (ii) [***Reproducible code***](https://www.britishecologicalsociety.org/wp-content/uploads/2019/06/BES-Guide-Reproducible-Code-2019.pdf).
+
+
+
+
+## Corrections {.appendix}
+
+If you see mistakes or want to suggest changes, please [create an issue](https://github.com/dossag/reproducible-science-afec-X-2021/issues) on the source repository.
+
+## Reuse {.appendix}
+
+Text and figures are licensed under Creative Commons Attribution [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Any computer code (R, HTML, CSS, etc.) in slides and worksheets, including in slide and worksheet sources, is also licensed under [MIT](https://github.com/dossag/reproducible-science-afec-XTBG-2021/blob/master/LICENSE.md). 

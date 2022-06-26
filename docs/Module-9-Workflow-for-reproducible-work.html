@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Reproducible science: Module 9</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Gbadamassi G.O. Dossa" />
+    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Reproducible science: Module 9
+## Workflow for reproducible work: Project
+### <a href="https://scholar.google.com/citations?user=w20AkZcAAAAJ&amp;hl=en">Gbadamassi G.O. Dossa</a>
+### Xishuangbanna Tropical Botanical Garden, XTBG-CAS
+### 2021/10/22 (updated: 2021-10-22)
+
+---
+
+
+class: center
+# Acknowledgements
+The content of this module are based on materials from:
+
+.pull-right[
+![Rob Schick](Rob Schick.jpg)
+]
+.pull-right[
+[Rob Schick's materials](https://nicholas.duke.edu/people/staff/schick-phd)
+]
+---
+class: center
+# Brainstorm with class
+.left[
+* What are critical elements needed?
+
+* What has been a problem?
+
+* What do you consider a need?
+]
+---
+class: center
+# Consistent Themes
+.left[
+- Working with collaborators
+
+- Consistent uncluttered file structure
+
+- Ability to re-enter the project and quickly reorient
+
+- Knowing what to version control
+
+- Knowing version control
+
+- Testing new code without breaking original
+
+- Re-running things efficiently
+]
+---
+class: center
+
+# What is a ***project***
+.left[
+A project is a well organized folder or directory.
+
+A project must contain all data related to it. Thus, we must have:
+
+- all data the project is based upon;
+
+- all the code (for cleaning and carrying out data analysis);
+
+- all necessary text that explains how the code talks to the data to render results;
+
+- any final reports derived from the project management;
+
+- any license entailed to the project;
+
+- a clear record of how the project has evolved through time (like lab notes, measurement protocol etc.)
+]
+
+---
+
+class: center
+# A good Enough starting point
+.left[
+
+“Computing workflows need to follow the same practices as lab projects and notebooks, with organized data, documented steps, and the project structured for reproducibility, but researchers new to computing often don’t know where to start.”
+---[Wilson et al. (2017)](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510)
+
+]
+
+
+---
+class:center
+# Six core tenets of a good enough practice
+
+&lt;img src="1 Goodenough.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+# Six core tenets of a good enough practice 2
+
+&lt;img src="2 Goodenough.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+# Six core tenets of a good enough practice 3
+&lt;img src="3 Goodenough.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+# Six core tenets of a good enough practice 4
+&lt;img src="4 Goodenough.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+# Six core tenets of a good enough practice 5
+
+&lt;img src="5 Goodenough.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+
+# Six core tenets of a good enough practice 6
+ 
+&lt;img src="6 Goodenough.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+# Six core tenets of a good enough practice 7
+ 
+&lt;img src="7 Goodenough.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+
+.center[
+[See magnificent tips from](https://simplystatistics.org/2016/04/21/writing/) from [Jeff leek](https://jtleek.com/)
+]
+---
+# Six core tenets of a good enough practice 8
+ 
+&lt;img src="8 Goodenough.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+# Six core tenets of a good enough practice 9
+
+.left[
+
+Below is graphically how the structure of a good enough project should look like]
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="9 Goodenough.png" alt="Drawing by Stella Schick" width="120%" /&gt;
+&lt;p class="caption"&gt;Drawing by Stella Schick&lt;/p&gt;
+&lt;/div&gt;
+
+
+
+---
+class: center
+# Let’s Build and Populate a Project
+
+.left[
+* Navigate to a directory
+
+* Make a folder for your project named whatever you want
+
+* cd into the project folder 
+
+* Start making folders with mkdir
+
+* Create 4 files using a text editor, or the touch command
+
+    - CITATION;
+  
+    - README;
+  
+    - LICENSE;
+  
+    - requirements.txt
+]
+
+---
+class: center
+# Have you succeeded? 
+Here is how it should look like on your git bash. Does yours look similar? 
+
+&lt;img src="13 Goodenough.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: center
+# What goes in each part? – Data Folder
+
+.left[
+* Raw data
+
+  - Consider locking the file, or making read-only
+
+  - Never hand edit the file!
+
+* Metadata
+
+  - I have one .csv file from BMMRO
+]
+
+---
+class: center
+# What goes in each part? – src Folder
+.left[
+* Two types of scripts
+ 
+  - Individual analytical blocks 
+ 
+      + reshapeData.R
+ 
+      + runRegression.R
+
+* Controller file, e.g. runAll.R 
+
+* runAll.R may contain:
+  - source(reshapeData.R)
+  - source(runRegression.R)
+  - source(plotAnalysis.R)
+
+And can be called from a command prompt with: 
+R CMD BATCH –vanilla runAll.R runAll.rout &amp;
+]
+
+---
+class: center
+
+# What goes in each part? – results Folder
+
+.left[
+* Any “generated” result:
+  
+  - Intermediate results
+     
+      + Cleaned data
+      
+      + Simulated data
+  
+  - Final Results
+  
+      + Figures
+  
+      + Tables
+
+* For most projects, you’ll likely have sub-directories:
+
+* Results
+
+  - CleanedData
+
+  - Figures
+
+  - Tables
+]
+
+---
+class: center
+
+# What goes in each part? - doc Folder
+
+.left[
+
+* Any text based documents:
+
+* If manually versioning, a changelog.txt file
+
+* projectNotebook.md (maybe Notepad or evernote…)
+
+* Manuscript (if using a version control, otherwise Google Docs)
+]
+
+
+---
+class: center
+
+# What goes in each file?  
+.left[
+- The README: file provides an overview of the project as a whole
+
+  * Project’s title
+
+  * Brief description
+
+  * Up-to-date contact information
+
+  * An example of how to run the code
+
+  * How people can engage with the project
+    
+  * If you are looking for contributors
+
+- CITATION: Explains how to reference the project:
+  
+  * DOIs for code and data
+  
+  * DOI for project if using OSF
+  
+  * Manuscript [Example here](https://github.com/dib-lab/khmer/blob/master/CITATION)
+
+- LICENSE
+Explains the licensing, e.g. CC-BY, CC-ND, etc.
+
+
+]
+---
+# Get a copy of a good enough practice
+You can get a template of a good enough Project structure as repository from [Rob Schick Github](https://github.com/robschick/goodEnough) 
+&lt;img src="11 Goodenough.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+# Good enough project workflow practice
+[Bahamas Marine Mammal Research Organization (BMMRO) data](https://ecologicaldata.org/wiki/bahamas-marine-mammal-research-organization)
+&lt;img src="10 Goodenough.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center, middle
+
+# Thank you for listening!
+Any questions now or email me at [**dossa@xtbg.org.cn**](http://people.ucas.edu.cn/~Dossa?language=en)
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr/), and [R Markdown](https://rmarkdown.rstudio.com).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

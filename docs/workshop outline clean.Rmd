@@ -1,0 +1,734 @@
+---
+title: "Reproducible science workshop"
+author: "[**_Gbadamassi G.O. Dossa_**](https://scholar.google.com/citations?user=w20AkZcAAAAJ&hl=en)"
+date: Time <upperscript>(Created on Aug 31 2021 and last updated on `r format(Sys.time(), "%a %b %d %Y %H:%M:%S")`)</upperscript>
+output: 
+#rmdformats::material
+  html_document:
+    fig_caption: yes
+    theme: spacelab #readable #sandstone #spacelab #flatly
+    highlight: pygments #tango #kate
+    toc: TRUE
+    toc_depth: 3
+    number_sections: TRUE
+    toc_float:
+      collapsed: TRUE
+      smooth_scroll: TRUE
+      toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The following is the tentative outline of a four day workshop that will be held in Xishuangbanna Tropical Botanical Garden [(XTBG)](http://english.xtbg.cas.cn/) from **October 19-22nd 2021**. The purpose of this workshop is to get participants familiar with the concept of ***reproducible science*** that is surprisingly not commonly taught but which is becoming a requirement for better collaboration (not only with others but with oneself through time) and for credible science. At the end of this workshop, attendees should be familiar with tools use to achieve reproducible science, will be more confident with themselves, and be inclined to adopt these tools which will ease their collaboration with themselves as well as others. This course consists of four main parts which aim to putting everything from data to final report including r code and some interpretations and also exercises as step by step work me through method. This course will be mainly taught by Dossa G.G.O. [click here to email me](mailto:dossa@xtbg.org.cn). Dossa has been teaching part of this workshop as a short module at the yearly postgraduate Advanced Fieldcourse in Ecology and Conservation -- XTBG [AFEC-X](https://www.pfs-tropasia.org/) for the past two years.
+
+***Who should attend this course?***
+
+Anyone who carries out research either as student, or research staff and seeks guidance to manage data efficiently, to improve peers credibility in their research output, and is keen to make science solid and credible. Consider thinking about the following questions:
+
+-   Have you ever worked collaboratively with others, and received multiple comments that you needed to deal with?
+-   Have you been ever asked by your collaborators/supervisor to go back to previous version of your manuscripts/analysis/ results?
+-   Have you ever thought that you finalized an analysis but to realize a mistake was in the data file?
+-   Have you ever spent endless time to explain your past / current projects to your collaborators (including yourself) but realize you even do not remember what you did at some point or why you did certain things?
+-   Have you ever copied a table from R/SPSS/Minitab/SAS to excel, and subsequently from Excel to your word processing document? And most annoyingly, you need to repeat these steps whenever anything has changed in the analysis or code.
+
+
+Extra for the homework
+
+***Table***
+[R Markdown table generator](https://www.tablesgenerator.com/markdown_tables)
+
+|Names   |Sex   |
+|:-:|:-:|
+| Dossa  |M   |
+|  Rhett |M   |
+|   Cao KF|M   |
+
+|Name   | Sex  |
+|:-:|:-:|
+| Dossa  |M   |
+| Rhett  |M   |
+|  Cao KF |M   |
+
+
+
+
+|Name   | Sex  |
+|:-----:|-----:|
+|Dossa  |M     |
+|Rhett  |M     |
+|Cao KF |M     |
+
+
+|Name   | Sex  |
+|:------|:----:|
+|Dossa  |M     |
+|Rhett  |M     |
+|Cao KF |M     |
+
+
+***Insert XTBG logo***
+
+![xtbg logo](xtbg_logo.png)
+
+***xtbg logo in small size***
+
+```{r, echo=FALSE,out.width='20%', fig.align='center', fig.cap='Small size of xtbg logo', include=TRUE, results="hold"}
+knitr::include_graphics('xtbg_logo.png')
+```
+
+If you answer **Yes** to any of the above questions then, this workshop is designed for you. Above all, there are five selfish reasons for why you would love to take this workshop click here [***Five selfish reasons***](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7) to learn more about these reasons.
+
+***Why you should attend this course?***
+
+Increasing number of publishers require not only to make supporting data of a given publication available to the scientific community but nowadays, even the r code (or any language code [***Reproducible code***](https://www.britishecologicalsociety.org/wp-content/uploads/2019/06/BES-Guide-Reproducible-Code-2019.pdf)) that supports findings and traces back the actual data analysis becomes compulsory. In any case, submitting the data and the R Markdown file to the publisher solves this requirement and saves researcher's time.
+
+***Preparation prior to the workshop***
+
+Attendees are required to install the following software beforehand
+
+1-	[Git](https://git-scm.com/downloads)
+
+2-	[Create a Github account on](https://github.com/)
+
+3-	[Download a Github desktop](https://desktop.github.com/)
+
+4-	[Download and install R](https://cran.r-project.org/)
+
+5-	[Download RStudio](https://www.rstudio.com/products/rstudio/download/)
+
+Below are books you can read at your spare time not required to read before the course.
+
+
+6-	[Book about  Github](https://orchid00.github.io/actions_sandbox/)
+
+8-	[Ggplot2 second edition](https://r-graphics.org/)
+
+9-	[R Markdown book](https://bookdown.org/yihui/rmarkdown-cookbook/)
+
+Also kindly read the two following documents: (i) [***Five selfish reasons***](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7) and (ii) [***Reproducible code***](https://www.britishecologicalsociety.org/wp-content/uploads/2019/06/BES-Guide-Reproducible-Code-2019.pdf).
+
+***Workshop schedule***
+
+The tentative schedule per day is as follow:
+
+- Day one
+
+Morning session **09:00 - 11:50 AM Modules 1 & 2**
+
+Afternoon session **1:30 - 4:00 PM Modules 3**
+
+- Day two
+
+Morning session **09:00 - 11:50 AM Modules  4 & 5**
+
+Afternoon session **2:30 - 5:30 PM Modules 6 & 7**
+
+- Day three
+
+Morning session **09:00 - 11:50 AM Modules 8**
+
+Afternoon session **2:30 - 5:30 PM Modules 9**
+
+- Day four
+
+Morning session **09:00 - 11:50 AM Modules 10 & 11**
+
+Afternoon session **2:30 - 5:30 PM Module 11 continued and outstanding questions** 
+
+The above schedule is subject to change depending on how we advance in the workshop. This is a workshop so there will be priority given to practice and questions from attendees to make sure to learn valuable skills with your time.
+
+
+# Launching workshop presentation
+
+## Reproducible research / science
+
+### Definitions
+
+#### Replication
+
+#### Reproducibility
+
+#### Reproducible research
+
+### Background: Underlying trends Applications
+
+### Outstanding problems: Complicated results
+
+### Data science pipeline: Authors vs.readers
+
+### Out of reproducibility realm
+
+### Reproducibility assumptions
+
+### Reproducibility as preventive measure
+
+### Who reproduces research?
+
+### Reproducers map
+
+### Reproducibility story so far
+
+### Evidence based data analysis
+
+### Evidence base data analysis 2
+
+### Desired data analysis map
+
+### Summary
+
+#### Importance
+
+#### What to "do" and what "not to do"
+
+#### Communicating results
+
+#### Organizing Data analysis
+
+#### Structure of Data analysis
+
+# Reproducible research: Bridging the gap among actors
+
+## What is the existing gap?
+
+## How can we bridge the gap?
+
+## Research pipeline
+
+## Recent developments in reproducible research
+
+## What do we need to be reproducible?
+
+## Who are the players involved?
+
+## Reproducible challenges
+
+## In reality: What is common?
+
+## Literate (statistical) programming
+
+## Literate (statistical) programming 2
+
+## Sweave limitations
+
+## Alternative to sweave: knitr
+
+## Summary
+
+# Dealing with data: Tidyverse
+
+## What is tidyverse and advantages
+
+## Tidyverse: well arranged collection of r packages
+
+## Flowchart of data science
+
+## Flowchart of data science in tidyverse
+
+## Practice in tidyverse "Use twitter to predict citation rate"
+
+### Import data
+
+### Tidy, transform
+
+#### Rename columns
+
+#### Clean up column names
+
+#### Create and modify columns
+
+### Piping
+
+#### Base r approach
+
+#### Piping approach
+
+### Other functions in Tidyverse
+
+#### Select columns
+
+#### Drop columns
+
+#### Split columns in multiple columns
+
+#### Transform column in date format
+
+#### Joint tables together
+
+### Character manipulation
+
+#### Filter
+
+#### Convert character to lowercase
+
+#### Remove space in string of characters
+
+## Basic data exploratory analysis
+
+### Count()
+
+### Group variables to compute stats [summary()]
+
+### Order stuff [arrange()]
+
+### Work on several columns [dplyr:::across()]
+
+### Tidying tibbles [wide(), long()]
+
+## Cheat sheets
+
+## Summary
+
+## References
+
+# Data visualization in Tidyverse: the power of ggplot2
+
+## ggplot2: Introduction
+
+## ggplot2: Grammar
+
+## Examples of plots
+
+## Some manipulations
+
+# Literate statistical programming: knitr
+
+## Problem
+
+## Literate statistical programming: Origin
+
+## Literate statistical programming needs
+
+## When to decide to work reproducibly?
+
+## Literate programming: Pros
+
+## Literate programming: Cons
+
+## knitr: Definition and usages
+
+## knitr: Requirements
+
+## What is Markdown?
+
+## What is knitr good for?
+
+## What is knitr not good for?
+
+## First knitr document as example
+
+## First knitr document as example 2
+
+## Processing a knitr document
+
+## Processing knitr document: Complex way
+
+## knitr to HTML output
+
+## What knitr produces: Markdown
+
+## A few notes
+
+## Processing knitr documents
+
+# R Markdown
+
+## Introduction to R Markdown
+
+## R Markdown workflow
+
+## Dissecting R Markdown structure
+
+### Details about YAML (Yet Another Make up Language)
+
+#### YAML arguments / variables / Parameters
+
+##### String
+
+##### Options
+
+##### Sub-options
+
+##### Code
+
+##### Output: "HTML", "LATEX", "pdf", "Word doc"
+
+##### R code
+
+##### Further settings for pdf outputs
+
+### Text content
+
+#### Language and syntax
+
+##### Lines
+
+##### Hard breaks
+
+##### Line blocks "\|"
+
+##### Block quotes
+
+##### Paragraphs
+
+##### Comments
+
+##### Exercise
+
+##### Headers
+
+##### Emphases
+
+##### Strikethrough
+
+##### Exercise
+
+##### Links-Internal
+
+##### Links-External
+
+##### Exercise
+
+##### Equations
+
+##### Footnotes -- Inline notes
+
+##### Footnotes -- Notes with identifiers
+
+##### Exercises
+
+##### List
+
+##### Lists Nesting
+
+##### Lists Numbering
+
+##### Dashes
+
+##### Subscript and upperscript
+
+##### Exercise
+
+### Code in and out chunks
+
+#### Code overview
+
+##### Code in chunks labels
+
+##### In chunk -labels
+
+##### Code chunks options
+
+##### Code chunks options default
+
+##### Code chunks-others useful options
+
+##### Code chunk- other useful option
+
+##### Code chunk- other useful options -- Figure dimension
+
+##### Code chunks- The setup chunk
+
+##### Code chunk-The data chunk
+
+#### Inline code- Overview
+
+##### Inline code- Example
+
+##### Exercises
+
+### Special figure session
+
+#### Figures -- Image -- Markdown syntax
+
+#### Figures -- dimensions options
+
+#### Figure---Image-kntir
+
+#### Figure-Image knitr dimension option
+
+#### Exercises
+
+### Speciation session on tables
+
+#### Makrdown syntax
+
+##### By hand
+
+##### By hand but by grid
+
+##### Exercises
+
+##### By stargazer- Overview
+
+###### Stargazer- Basics
+
+###### Stargazer-Data tables
+
+####### Defaults
+
+####### Modifying default
+
+####### Exercises
+
+####### Analyses tables
+
+####### Exercises
+
+### Special session on citations\| References
+
+# Version control
+
+## Version control overview
+
+## Version control- Manual / traditional way
+
+## Version control- The power of Git
+
+### Version control- definitions
+
+### Command line interface
+
+#### Definitions
+
+#### Importance
+
+#### Language
+
+##### Directories
+
+##### Directory structure
+
+##### Special directories
+
+###### Root /
+
+###### Home \~
+
+###### Path or the use of pwd
+
+###### Interface commands
+
+####### Definition of command
+
+####### Clear
+
+####### cd (change directory)
+
+####### mkdir (Make directory)
+
+####### touch (create an empty file)
+
+####### cp (copy a file)
+
+####### rm (remove a file)
+
+####### mv (move a file)
+
+####### echo (return whatever is after it)
+
+####### date (For getting date)
+
+####### summary of basic commands
+
+## Version control Git -Setup
+
+## GitHub -- Setup
+
+## Basic git commands
+
+### Snapshot or overview
+
+### add (Adding files)
+
+### commit (Recording changes made)
+
+### push (pushing commit and changes from git to github)
+
+### Branches
+
+### Main
+
+### Pull
+
+## Core concepts in git
+
+### commit (snapshots)
+
+### Graph (Relatiosnship between commits)
+
+### Changeset
+
+### Git record lines changes
+
+## States of git repository
+
+## States of git repository
+
+### What a repository?
+
+### Three local states
+
+### Three local states plus remotes
+
+## Git basic command
+
+### git init To initialize an empty repo
+
+### git add -Add document to staging area
+
+### Viewing repository
+
+#### git status -- What's happening?
+
+#### git log -- To view history of the repository
+
+#### git log -- With options
+
+### git commit -- Record changes in the repository
+
+#### git commit what occurred
+
+#### Good commit message
+
+#### Git commit 7 great rules
+
+#### Git rm
+
+#### Git mv
+
+## Workflow visualized
+
+## Life cycle of status
+
+## Commit graph visualized
+
+## gitignore
+
+## gitignore clear cache
+
+## Exercises
+
+## Collaboration
+
+### Pull: Definition
+
+### Merge: Definition
+
+### Merge conflict
+
+### Branch:Definition
+
+### Pull request
+
+### GitHub project setup
+
+#### Project setup owner
+
+#### Project setup collaborator
+
+#### Exercises
+
+### Workflow
+
+#### Pull/commit/push
+
+#### Exercises
+
+### Workflow alternative
+
+### Alternative example
+
+### Exercises
+
+## Workflow notes Edit .Rmd
+
+## exercises
+
+# All in one: Git, GitHub, & R Studio
+
+## Setup R Studio
+
+## Clone repository: From remote to locale
+
+### Clone public repository
+
+#### Download zip: Traditional approach
+
+#### Clone with https approach
+
+### Clone private repository
+
+#### What is SSH?
+
+#### Setup SSH key
+
+##### Setup SSH key on Windows computer
+
+##### Setup SSH key on Mac computer
+
+#### Link SSH on GitHub
+
+#### Clone with SSH
+
+## Commit in R Studio
+
+## Push in R Studio
+
+## Pull in R Studio
+
+## Merge conflict
+
+# Workflow for reproducible work: Project
+
+## What is a project?
+
+## Good enough flowchart of a project
+
+## What goes into each part of a project?
+
+### Data folder
+
+### src floder
+
+### results folder
+
+### doc folder
+
+### README file
+
+### CITATION file
+
+### LICENSE file
+
+## Example: Good enough repository to follow
+
+# R Project: Think ahead of time
+
+# Example for reproducible reporting (A step by step approach)
+
+## Pose th research question
+
+## Brainstorm about the ideal data
+
+## Search for best available data
+
+## Collect the data
+
+## Clean the data
+
+## Carry out exploratory data analysis
+
+## Make statistical modeling
+
+## Interpret the results
+
+## Challenge your results
+
+## Summarize and layout the writing
+
+## Create a reproducible code
+
+
+

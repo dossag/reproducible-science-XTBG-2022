@@ -1,0 +1,42 @@
+---
+title: "Reproducible science workshop"
+Subtitle: "Students reading instructions"
+author: "[**_Gbadamassi G.O. Dossa_**](https://scholar.google.com/citations?user=w20AkZcAAAAJ&hl=en)"
+date: Time <upperscript>(Created on Oct 29 2021 and last updated on `r format(Sys.time(), "%a %b %d %Y %H:%M:%S")`)</upperscript>
+output: 
+#rmdformats::material
+  html_document:
+    fig_caption: yes
+    theme: spacelab #readable #sandstone #spacelab #flatly
+#    highlight: pygments #tango #kate
+#    toc: TRUE
+#    toc_depth: 3
+#    number_sections: TRUE
+#    toc_float:
+#      collapsed: TRUE
+#      smooth_scroll: TRUE
+#      toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Prior to attending the workshop on reproducible science, students from AFEC-X are required to form a group of 3-4 members and select. Each group gets assigned a publications. This publication needs to to be read for 30 minutes individually and members of each group then gather to discuss about 45 minutes during which they will answer the following questions:
+
+1- What was the title of your article? (tip: look the the highlight sentence at the top of your pdf file)
+
+2- How many people did you read the article with?
+
+3- Cite one term that was new to you in your article (One term er person and define it)
+
+4- How do these new terms of your group fit in the reproducible frame work?
+
+5- What does the article stir up in your mind that you wish to know now?
+
+6- What is the take home message from your article?
+
+7- Write a quote from the article that you think summarizes the precedent take home message.
+
+8- Make a powerpoint presentation to deliver the answers of the above questions. Each presentation will 8 minutes.

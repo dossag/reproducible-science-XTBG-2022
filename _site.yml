@@ -1,0 +1,68 @@
+name: "reproducible-science-afec-XTBG-2021"
+title: "Reproducible science afec @ XTBG 2021"
+description: "A two-day afec on Reproducible science"
+output_dir: "docs"
+theme: "theme.css"
+#repository_url: https://github.com/wilkelab/SDS375
+include: [".nojekyll"]
+navbar:
+#  logo:
+#    image: images/cefe.png #
+#    href: https://www.cefe.cnrs.fr/en/
+  source_url: true
+  left:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "Slides"
+      menu:
+        - text: "Module1:Motivations and intro"
+          href: slides/Module1_introduction.html
+        - text: "Module2 Bridging the gap among actors"
+          href: slides/Module2_Bridging_the_gap_among_actors.html
+        - text: "Module3: Data analysis with tidyverse"
+          href: slides/Module3_Dealing_with_data_analysis.html
+        - text: "Module4: Data visualisation"
+          href: slides/Module4_Data_visualization_ggplot2.html
+        - text: "Module5: Literate statistical programming: `knitr`"
+          href: slides/Module5_Literate_statistical_programming_knitr.html
+        - text: "Module6: R Markdown"
+          href: slides/Module6_markdown.html
+        - text: "Module7: Version control Git and Github"
+          href: slides/Module7_Version_control_git_github.html
+        - text: "Module7_extra: Extra class on git and Github"
+          href: slides/Module7_extra.pdf
+        - text: "Module8: R project"
+          href: 
+        - text: "Module9: Reproducible: Good enough workflow"
+          href: 
+    - text: "Worksheets"
+      menu:
+        - text: "Exercise 1: Tidyverse data manipulation"
+          href: Exercise_1_Tidyverse_Data_manipulation.html
+        - text: "Exercise 1: Tidyverse data manipulation - Solutions"
+          href: Excercise_1_Data_manipulation_solution.html
+        - text: "Exercise 2: Tidyverse ggplot2 data visualisation"
+          href: Exercise_2_datavisualisation.html
+        - text: "Exercise 2: Tidyverse ggplot2 data visualisation - Solutions"
+          href: Exercise_2_datavisualisation_solution.html
+        - text: "Exercise 3 : Building your own Rmarkdown document"
+          href: Exercise_3_Building_your_own_RMardown.html
+        - text: "Exercise 3: Writing reproducible documents - Solutions"
+          href: Exercise_3_Building_your_own_RMardown_solution.html
+        - text: "Exercise 4: Version control Git and Github"
+          href: Exercise_4_Version_control_git_github.html
+        - text: "Exercise 4 data bbrom"
+          href: bbmroData.csv
+        - text: "Exercise 4: Writing reproducible documents - Html output"
+          href: 
+        - text: "Practical 3: Writing reproducible documents - PDF output"
+          href: 
+        - text: "Practical 3: Writing reproducible documents - Word output"
+          href: 
+        - text: "Practical 4: Version control"
+          href: 
+    - icon: fab fa-github
+      href: https://github.com/dossag
+output: distill::distill_article
+

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Introduction to Git and GitHub with RStudio</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Gbadamassi G.O. Dossa" />
+    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introduction to Git and GitHub with RStudio
+### <a href="https://scholar.google.com/citations?user=w20AkZcAAAAJ&amp;hl=en">Gbadamassi G.O. Dossa</a>
+### last updated: 2021-10-30
+
+---
+
+layout: true
+
+
+
+
+class: center
+# Acknowledgements
+The content of this module are based on materials from:
+
+.pull-right[
+![olivier gimenez](img/oliviergimenez.png)
+]
+.pull-right[
+[olivier gimenez's materials](https://oliviergimenez.github.io/)
+]
+
+---
+# Credits
+
+* Many slides from [Anna Krystalli](https://annakrystalli.me/about/)
+
+.center[![](img/annakrystalli.jpg)]
+
+---
+
+# Rings a bell? 
+
+&lt;center&gt;
+
+&lt;img src="http://www.phdcomics.com/comics/archive/phd101212s.gif" height="500px"&gt;
+ 
+&lt;/center&gt;
+ 
+
+
+---
+
+# Version Control
+
+### What is it? 
+
+The **management of changes** to documents, computer programs,  websites, etc...
+
+### Git &lt;img src="https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" height="25px" &gt;
+
+Free to use **version control software**
+
+If Dropbox and the "Track changes" feature in MS Word had a baby, that would be Git (Alexa Fredston)
+
+### GitHub &lt;img src="https://raw.githubusercontent.com/annakrystalli/rrresearch/master/docs/assets/github_logo.jpg" height="30px"&gt;
+
+A **website** (https://github.com/) to **store your Git repositories online** and makes it easy to collaborate with others
+
+You do not need GitHub to use Git, just like you do not need RStudio to run R (Alexa Fredston)
+
+
+---
+# [Why use version control?](https://stackoverflow.com/questions/1408450/why-should-i-use-version-control/1408464#1408464)
+
+.center[
+![](img/why-vc.png)
+]
+
+
+
+---
+
+# Git, Github &amp; RStudio
+
+#### Before: Git only through the terminal 😢
+
+--
+
+***
+
+## Now RStudio allows using `Git` &amp; `GitHub` 🤩
+
+.center[
+![](https://media.giphy.com/media/GA2FNpP1kAQNi/giphy.gif)
+]
+
+
+---
+# Configure Git &amp; GitHub
+
+### Configure Git
+
+**Check your configuration**
+
+
+```r
+usethis::git_sitrep()
+```
+
+**Set your configuration**
+
+Use your github username and the email you used to sign-up on GitHub
+
+
+```r
+usethis::use_git_config(
+    user.name = "oliviergimenez",
+    user.email = "olivier.gimenez@cefe.cnrs.fr")
+```
+
+---
+# Configure GitHub authentication
+
+### Get GITHUB Personal Authorisation Token
+
+
+```r
+usethis::create_github_token()
+```
+
+
+&lt;img src="assets/browse_github.png" height="300px"&gt;
+
+---
+
+### Store in `.Renviron` file
+
+
+```r
+usethis::edit_r_environ()
+```
+
+&lt;img src="assets/GITHUB_PAT.png" height="400px"&gt;
+
+
+
+---
+
+# RStudio Projects
+
+## Use RStudio projects to keep materials associated with a particular analysis together
+
+&lt;br&gt;
+ 
+.pull-left[
+- **Self contained** and **portable**
+- **Working directory set to root** of project on launch
+- **Fresh session** everytime the project is launched
+
+See Jenny Bryan's post on [**project oriented workflows**](https://www.tidyverse.org/articles/2017/12/workflow-vs-script/) for more details
+]
+
+.pull-right.center[
+
+**File &gt; New Project &gt; New Directory**
+
+&lt;img src="assets/new_project.png" height=200px&gt;
+]
+
+
+
+---
+# Initialise git
+
+
+### Initialise **RStudio project** with Git by **just checking a box!**
+
+It's now **a repository**
+
+&lt;img src="assets/project_git.png" height="200px"&gt;
+
+
+
+
+---
+# Git panel
+
+## Integrated graphical user interface
+
+&lt;br&gt;
+
+.center[
+&lt;img src="assets/git_tab.png" height="300px"&gt;
+]
+
+
+---
+# Git terms
+
+* **repository** your project folder
+&lt;br&gt;
+* **commit** a snapshot of your repo
+&lt;br&gt;
+* **push** send commits to a remote
+&lt;br&gt;
+* **pull** get commits from a remote
+
+&lt;br&gt;
+
+* (*clone* get the repository from the remote for the first time)
+* (*branch* a movable label that points to a commit)
+* (*merge* combining two branches)
+* (*remote* a computer with the repository on it)
+
+---
+# Git RStudio workflow
+
+.pull-left[
+#### view file status
+&lt;img src="assets/git_view.png" height="150px"&gt;
+
+#### stage files
+&lt;img src="assets/git_add.png" height="150px"&gt;
+]
+
+.pull-right[
+#### commit changes
+&lt;img src="assets/git_commit.png" width="600px"&gt;
+]
+---
+
+# Share on GitHub
+
+#### Create repo
+
+Via GitHub or using package `usethis` w/ `usethis::use_github(protocol = "https")`
+
+&lt;img src="assets/my_awesome_repo.png" width="750px"&gt;
+
+#### Push further changes
+
+&lt;img src="assets/push_github.png" height="50px"&gt;
+
+
+---
+
+# Anatomy of a GitHub repo
+
+- **`README`**. Explain what your project is, and how to use it. 
+  + `usethis::use_readme_md()`
+  + `usethis::use_readme_rmd()`
+
+- **`LICENSE`**. Without a licence, the contents of the repository are technically closed. 
+  + Examples licence [MIT](https://tldrlegal.com/license/mit-license): `usethis::use_mit_license(name = "Olivier Gimenez")`
+  + `?licenses`: details of functions available to generate licenses
+  + [https://choosealicense.com/](https://choosealicense.com/) help on choosing a licence.
+
+    
+---
+
+# Anatomy of a GitHub repo
+
+
+- **`CONTRIBUTING.md`** - guidelines for contributors.
+  + `usethis::use_tidy_contributing()` provides a realtively strict but instructive template
+
+- **`CODE_OF_CONDUCT.md`** set the tone for discourse between contributors. 
+  + `use_code_of_conduct()`
+
+
+---
+# GitHub issues
+
+### Use so-called issues to plan, record and discuss tasks
+
+&lt;img src="assets/github_issues.png" width="800px"&gt;
+
+---
+
+# Why using a remote like GitHub ?
+
+* A backup of your repository
+
+* Keep track of all changes, and possibility to rollback to a previous state
+
+* Increase your visibility 
+
+* Easy distribution of packages (without CRAN submissions)
+
+* Work with others (not [fully] covered)
+
+* Increase interactions with users (issues, pull requests)
+
+
+---
+
+# Working with others
+
+* Use issues to talk to repo holders: propose changes, report bugs, etc...
+
+* If you're a collaborator, clone the repo, do modifications and push them
+* If you're not a collaborator, fork, clone then use pull requests
+
+* Branches allow playing around without messing around with the main line of development
+    + Allow exploring several versions of an idea, and switching between them
+    + A branch should correspond to a bug fix, a new feature, etc.
+    + Useful when unsure when/if some modifications will be included
+
+.center[
+&lt;img src="assets/git-branches-merge.png" height="150px"&gt;
+]
+
+* Resolving conflicts: see practical
+
+---
+# Further reading
+
+* The bible: [Happy Git and GitHub for the useR](https://happygitwithr.com/)
+
+* See also: [Hadley Wickham R packages book](https://r-pkgs.org/git.html)
+
+* And in French: [Travailler avec Git via RStudio et versionner son code](https://thinkr.fr/travailler-avec-git-via-rstudio-et-versionner-son-code/)
+
+---
+# My two-cent workflow
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;center&gt;
+
+&lt;img src="img/mytwocents.gif"&gt;
+ 
+&lt;/center&gt;
+
+
+
+---
+# Create a new repository on GitHub
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;center&gt;
+
+&lt;img src="img/new-repo-in-github.png"&gt;
+ 
+&lt;/center&gt;
+
+---
+# Name and Public/Private
+
+&lt;center&gt;
+
+&lt;img src="img/create-new-repo.png"&gt;
+ 
+&lt;/center&gt;
+
+
+---
+# Copy https
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;center&gt;
+
+&lt;img src="img/https.png"&gt;
+ 
+&lt;/center&gt;
+
+
+---
+# In RStudio, File/New Project
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;center&gt;
+
+&lt;img src="img/pull-down-new-project.png"&gt;
+ 
+&lt;/center&gt;
+
+
+---
+# Select Version Control
+
+&lt;br&gt;
+
+&lt;center&gt;
+
+&lt;img src="img/create-project.png"&gt;
+ 
+&lt;/center&gt;
+
+
+---
+# Select Git
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;center&gt;
+
+&lt;img src="img/create-project-vc.png"&gt;
+ 
+&lt;/center&gt;
+
+
+---
+# Clone your repo (remote to local)
+
+&lt;center&gt;
+
+&lt;img src="img/clone-git-repo.png"&gt;
+ 
+&lt;/center&gt;
+
+
+---
+# Stage, commit and push
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;center&gt;
+
+&lt;img src="img/files-rstudio.png"&gt;
+ 
+&lt;/center&gt;
+
+---
+# Alternative is to go local first
+
+&lt;br&gt;
+
+* Step 1: Use RStudio projects (possibility to create a project from an existing directory)
+
+* Step 2: `usethis::use_git()` and follow instructions
+
+* Step 3: `usethis::use_github()` and follow instructions
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

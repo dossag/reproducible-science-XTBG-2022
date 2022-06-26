@@ -1,0 +1,167 @@
+---
+title: "Workshop on reproducible science: Motivations"
+author: "[Gbadamassi G.O. Dossa](https://scholar.google.com/citations?user=w20AkZcAAAAJ&hl=en)"
+date: "last updated: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    #css: [default, "slides-theme.css"]
+    lib_dir: libs
+    nature:
+      #ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      #slideNumberFormat: ''
+      titleSlideClass: [center, middle]
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(comment = "")
+```
+
+
+class: center
+# Acknowledgements
+The content of this module are based on materials from:
+
+.pull-right[
+![olivier gimenez](img/oliviergimenez.png)
+]
+.pull-right[
+[olivier gimenez's materials](https://oliviergimenez.github.io/)
+]
+---
+class: inverse, center, middle
+# The problems
+
+---
+<iframe width="1200" height="500" src="https://www.youtube.com/embed/s3JldKoA0zw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Credit: [Ignasi Bartomeus, PhD](https://bartomeuslab.com/)
+
+---
+
+<center>
+
+<img src="assets/img/phd031214s.png" width="400px" />
+
+</center>
+
+
+---
+class: inverse, center, middle
+# Why reproducible science?
+
+
+---
+
+
+<center>
+
+<img src="assets/natureCapture.png" width="800px" />
+
+</center>
+
+
+---
+
+
+<center>
+
+<img src="assets/leMonde_science.png" width="1100px" />
+
+</center>
+
+
+---
+class: inverse, center, middle
+# What?
+
+---
+
+
+<center>
+
+<img src="assets/definitions.jpg" width="900px" />
+
+</center>
+
+
+---
+class: inverse, center, middle
+# Benefits?
+
+---
+
+# Among other advantages
+
+* Forces you to double-check your stuff (you share data and code)
+
+* Your future-self will thank you (repeat analyses, write papers)
+
+* By being reproducible, you build up your credibility and reputation
+
+* Reproducibility favors trust in the scientific endeavour
+
+* Faster scientific progress 
+
+---
+
+
+<center>
+
+<img src="img/time-saving.png" width="850px" />
+
+</center>
+
+---
+class: inverse, center, middle
+# How?
+
+---
+## How can you reproduce results?
+
+.center[![](assets/img/ctrlcctrlv.png)]
+
+
+---
+## What do we need to make research reproducible?
+
+- Data in some coherent format 
+
+- Programming language (R, Python)
+
+- Text, figures and code in same environment (litterate programming)
+
+- Continuous and transparent editions and updates (version control)
+
+
+---
+## This workshop
+
+* Motivations (these slides)
+
+* Manipulating data in the `tidyverse`   
+
+* Visualising data in the `tidyverse`   
+
+* Writing dynamic and reproducible documents with `R Markdown`  
+
+* Versioning with `Git` and `GitHub` in `RStudio`   
+
+* Take-home messages    
+
+
+---
+
+## Further reading
+
+*  Alston & Rick (2021). [A Beginner's Guide to Conducting Reproducible Research](https://doi.org/10.1002/bes2.1801 ). Bull Ecol Soc Am. 
+* Baker (2016). [1,500 scientists lift the lid on reproducibility](https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970). Nature. 533:452-4. 
+* Lowndes et al. (2017). [Our path to better science in less time using open data science tools](https://doi.org/10.1038/s41559-017-0160). Nat Ecol Evol 1:0160. 
+* Wilson et al. (2017).[ Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510). PLoS Comput Biol 13(6): e1005510. 
+* Markowetz (2015). [Five selfish reasons to work reproducibly](https://doi.org/10.1186/s13059-015-0850-7). Genome Biol 16: 274.
+* BES Guides to Better Science: [Reproducible Code](https://www.britishecologicalsociety.org/wp-content/uploads/2019/06/BES-Guide-Reproducible-Code-2019.pdf). 
+* Casajus, Dray, Gimenez, Guéry, Guilhaumon & Schiettekatte (2020). [Formation FRB CESAB / GDR ECOSTAT : Bonnes pratiques pour une recherche reproductible en écologie numérique](https://github.com/FRBCesab/datatoolbox/tree/2020)
+
+

@@ -1,0 +1,368 @@
+---
+title: "Reproducible science workshop"
+author: "Gbadamassi G.O. Dossa"
+date: (Created on August 31st 2021 and last updated on `r format(Sys.time(), "%a %b %d %Y %H:%M:%S")`)
+output: 
+#rmdformats::material
+  html_document:
+    fig_caption: yes
+    theme: spacelab #readable #sandstone #spacelab #flatly
+    highlight: pygments #tango #kate
+    toc: TRUE
+    toc_depth: 3
+    number_sections: TRUE
+    toc_float:
+      collapsed: TRUE
+      smooth_scroll: TRUE
+      toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The following is the tentative outline of a four day workshop that will be held in Xishuangbanna Tropical Botanical Garden [(XTBG)](http://english.xtbg.cas.cn/) from **October 11-14th 2021**. The purpose of this workshop is to get participants familiar with the concept of **_reproducible science_** that is surprisingly not commonly taught but which is becoming a requirement for better collaboration (not only with others but with oneself through time) and for credible science. At the end of this course, attendees should be familiar with tools use to achieve reproducible science and will be more confident with themselves to adopt these tools which will ease their collaboration 
+
+This course will be mainly taught by Dossa G.G.O. [email me](mailto:dossa@xtbg.org.cn). Dossa has been teaching part of this workshop as a short module at the yearly postgraduate Advanced Fieldcourse in Ecology and Conservation in XTBG [AFEC-X](https://www.pfs-tropasia.org/).
+
+***Preparation prior to the workshop***
+
+Attendees are required to install the following software beforehand
+1-	[Git](https://git-scm.com/downloads)
+
+2-	[Create a Github account on](https://github.com/)
+
+3-	[Download a Github desktop](https://desktop.github.com/)
+
+4-	[Download and install R](https://cran.r-project.org/)
+
+5-	[Download RStudio](https://www.rstudio.com/products/rstudio/download/)
+
+Below are books you can read at your spare time not required to read before the course.
+
+
+6-	[Book about  Github](https://orchid00.github.io/actions_sandbox/)
+
+8-	[Ggplot2 second edition](https://r-graphics.org/)
+
+9-	[R Markdown book](https://bookdown.org/yihui/rmarkdown-cookbook/)
+
+Also kindly read the two following documents: (i) [***Five selfish reasons***](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7) and (ii) [***Reproducible code***](https://www.britishecologicalsociety.org/wp-content/uploads/2019/06/BES-Guide-Reproducible-Code-2019.pdf).
+
+
+# Launching course presentation
+## Reproducible research / science
+###  Definitions
+#### Replication
+#### Reproducibility
+#### Reproducible research
+### Background: Underlying trends Applications
+### Outstanding problems: Complicated results
+### Data science pipeline: Authors vs.readers
+### Out of reproducibility realm
+### Reproducibility assumptions
+### Reproducibility as preventive measure
+### Who reproduces research?
+### Reproducers map
+### Reproducibility story so far
+### Evidence based data analysis
+### Evidence base data analysis 2
+### Desired data analysis map
+### Summary
+#### Importance
+#### What to “do” and what “not to do”
+#### Communicating results
+#### Organizing Data analysis
+#### Structure of Data analysis
+
+#	Reproducible research: Bridging the gap among actors
+## What is the existing gap?
+## How can we bridge the gap?
+## Research pipeline
+## Recent developments in reproducible research
+## What do we need to be reproducible?
+## Who are the players involved?
+## Reproducible challenges
+## In reality: What is common?
+## Literate (statistical) programming
+## Literate (statistical) programming 2
+## Sweave limitations
+## Alternative to sveawe: knitr
+## Summary
+
+
+# Dealing with data: Tidyverse [Olivier]
+## What is tidyverse and advantages
+## Tidyverse: well arranged collection of r packages
+## Flowchart of data science
+## Flowchart of data science in tidyverse
+## Practice in tidyverse “Use twitter to predict citation rate”
+### Import data
+### Tidy, transform
+#### Rename columns
+#### Clean up column names
+#### Create and modify columns
+### Piping
+#### Base r approach
+#### Piping approach
+### Other functions in Tidyverse
+#### Select columns 
+#### Drop columns
+#### Split columns in multiple columns
+#### Transform column in date format
+#### Joint tables together
+### Character manipulation
+#### Filter
+#### Convert character to lowercase
+#### Remove space in string of characters
+## Basic data exploratory analysis
+### Count()
+### Group variables to compute stats [summary()]
+### Order stuff [arrange()]
+### Work on several columns [dplyr:::across()]
+### Tidying tibbles [wide(), long()]
+## Cheat sheets
+## Summary
+## References
+
+# Data visualization in Tidyverse: the power of ggplot2
+## ggplot2: Introduction
+## ggplot2: Grammar
+## Examples of plots
+## Some manipulations [Look at slides by Resulumit 131-139]
+
+# Literate statistical programming: knitr
+## Problem
+## Literate statistical programming: Origin
+## Literate statistical programming needs
+## When to decide to work reproducibly?
+## Literate programming: Pros
+## Literate programming: Cons
+## knitr: Definition and usages
+## knitr: Requirements
+## What is Markdown?
+## What is knitr good for?
+## What is knitr not good for?
+## First knitr document as example
+## First knitr document as example 2
+## Processing a knitr document
+## Processing  knitr document: Complex way
+## knitr to HTML output
+## What knitr produces: Markdown
+## A few notes
+## Processing knitr documents
+
+# R Markdown
+## Introduction to R Markdown [Olivier, Resulumit P39]
+## R Markdown workflow [P5]
+## Dissecting R Markdown structure [P6]
+### Details about YAML (Yet Another Make up Language)
+####  YAML arguments / variables / Parameters
+##### String
+##### Options
+##### Sub-options
+##### Code
+##### Output: “HTML”, “LATEX”, “pdf”, “Word doc”
+##### R code
+##### Further settings for pdf outputs
+### Text content
+#### Language and syntax
+##### Lines
+##### Hard breaks [Resu P67]
+##### Line blocks “|” [P68]
+##### Block quotes [P69]
+##### Paragraphs [P70]
+##### Comments [P71]
+##### Exercise
+##### Headers [P73]
+##### Emphases [P74]
+##### Strikethrough [P75]
+##### Exercise
+##### Links-Internal [P77]
+##### Links-External [P78]
+##### Exercise
+##### Equations [P80]
+##### Footnotes – Inline notes [P81]
+##### Footnotes – Notes with identifiers [P82]
+##### Exercises
+##### List [P84]
+##### Lists Nesting [P85]
+##### Lists Numbering [P81]
+##### Dashes [P87]
+##### Subscript and upperscript [P88]
+##### Exercise
+### Code in and out chunks [P102]
+#### Code overview [P103]
+##### Code in chunks labels [P104-105]
+##### In chunk -labels [P105]
+##### Code chunks options [P106]
+##### Code chunks options default
+##### Code chunks-others useful options [ResulumP110]
+##### Code chunk- other useful option [Cache, eval, error, message, warning, P111]
+##### Code chunk- other useful options – Figure dimension [fig.height; fig.width; fig.caption; resolution; out.extra; P112-113]
+##### Code chunks- The setup chunk [P114]
+##### Code chunk-The data chunk [P115]
+#### Inline code- Overview [P118]
+##### Inline code- Example
+##### Exercises
+### Special figure session
+#### Figures – Image – Markdown syntax [P122]
+#### Figures – dimensions options [P125]
+#### Figure—Image-kntir [P126]
+#### Figure-Image knitr dimension option [out.width; fig.align; P128]
+#### Exercises
+### Speciation session on tables
+#### Makrdown syntax [P141]
+##### By hand [P142-145]
+##### By hand but by grid [P146-147]
+##### Exercises
+##### By stargazer- Overview [P149-150]
+###### Stargazer- Basics [151]
+###### Stargazer-Data tables [P152]
+####### Defaults [P153]
+
+####### Modifying default [P154-159]
+
+####### Exercises [P160]
+
+####### Analyses tables [P161-166]
+
+####### Exercises
+
+### Special session on citations| References [Good graphic: Olivier P54, get it together.people P59]
+
+# Version control
+## Version control overview [R P184]
+## Version control- Manual / traditional way [P186]
+## Version control- The power of Git
+### Version control- definitions [Git; Github; Repository or repo; to commit; to push, to pull; P188]
+### Command line interface
+#### Definitions
+#### Importance
+#### Language
+##### Directories
+##### Directory structure
+##### Special directories
+###### Root /
+###### Home ~
+###### Path or the use of pwd
+###### Interface commands
+####### Definition of command
+
+####### Clear
+
+####### cd (change directory)
+
+####### mkdir (Make directory)
+
+####### touch (create an empty file)
+
+####### cp (copy a file)
+
+####### rm (remove a file)
+
+####### mv (move a file)
+
+####### echo (return whatever is after it)
+
+####### date (For getting date)
+
+####### summary of basic commands
+
+## Version control Git -Setup
+
+git config –global user.name “name”
+git config –global user.email "name@email.com"
+
+## GitHub – Setup
+## Basic git commands
+### Snapshot or overview [Lecture 5 P2, lecture 5 P3]
+### add (Adding files)
+### commit (Recording changes made)
+### push (pushing commit and changes from git to github)
+### Branches
+### Main
+### Pull
+## Core concepts in git (PPT Lecture 10)
+### commit (snapshots)
+### Graph  (Relatiosnship between commits)
+### Changeset
+### Git record lines changes
+## States of git repository
+## States of git repository 
+### What a repository?
+### Three local states
+### Three local states plus remotes
+## Git basic command
+### git init To initialize an empty repo
+### git add -Add document to staging area
+### Viewing repository
+#### git status – What’s happening?
+#### git log – To view history of the repository
+#### git log – With options
+### git commit – Record changes in the repository
+#### git commit what occurred 
+#### Good commit message
+#### Git commit 7 great rules
+#### Git rm
+#### Git mv
+## Workflow visualized
+## Life cycle of status
+## Commit graph visualized
+## gitignore [Resulmit 198]
+## gitignore clear cache [P205]
+## Exercises [P206]
+## Collaboration
+### Pull: Definition [P209]
+### Merge: Definition
+### Merge conflict
+### Branch:Definition
+### Pull request [P210]
+### GitHub project setup
+#### Project setup owner [P211-212]
+#### Project setup collaborator
+#### Exercises
+### Workflow
+#### Pull/commit/push [P215]
+#### Exercises [P216-218]
+### Workflow alternative
+### Alternative example [P220]
+### Exercises 
+## Workflow notes Edit .Rmd [P222]
+## exercises
+
+# All in one: Git, GitHub, & R Studio
+##  Setup R Studio [190-191,192-197]
+## Clone repository: From remote to locale
+### Clone public repository
+#### Download zip: Traditional approach
+#### Clone with https approach
+### Clone private repository
+#### What is SSH?
+#### Setup SSH key
+##### Setup SSH key on Windows computer
+##### Setup SSH key on Mac computer
+#### Link SSH on GitHub
+#### Clone with SSH
+## Commit in R Studio
+## Push in R Studio
+## Pull in R Studio
+## Merge conflict
+
+# Workflow for reproducible work: Project
+## What is a project?
+## Good enough flowchart of a project
+## What goes into each part of a project?
+### Data folder
+### src floder
+### results folder
+### doc folder
+### README file
+### CITATION file
+### LICENSE file
+## Example: Good enough repository to follow
+
+# R Project: Think ahead of time
+# Example for reproducible reporting
+
+

@@ -1,0 +1,81 @@
+---
+title: "Reproducible science workshop"
+subtitle: "Exercise 1 Tidyverse Data manipulation"
+author: "[**_Gbadamassi G.O. Dossa_**](https://scholar.google.com/citations?user=w20AkZcAAAAJ&hl=en)"
+date: (Created on Sept 31 2021 and last updated on `r format(Sys.time(), "%a %b %d %Y %H:%M:%S")`)
+output: 
+#rmdformats::material
+  html_document:
+    fig_caption: yes
+    theme: spacelab #readable #sandstone #spacelab #flatly
+    highlight: pygments #tango #kate
+    toc: TRUE
+    toc_depth: 3
+    number_sections: TRUE
+    toc_float:
+      collapsed: TRUE
+      smooth_scroll: TRUE
+      toc: true
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+#options(htmltools.dir.version = FALSE)
+#knitr::opts_chunk$set(comment = "", warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+
+# Download packages
+
+We will need the following packages. Please run the code below to download them. 
+
+***Please remove the "#" before running the code below***
+
+```{r,}
+#install.packages(c("tidyverse", "sf", "emo", "janitor", "palmerpenguins", "usethis", "lubridate"))
+```
+
+# Motivation
+
+We use data from package `palmerpenguins` to familiarize ourselves with data manipulation with the tidyverse. We first load the packages we will need. 
+```{r}
+library(palmerpenguins)
+library(tidyverse)
+```
+
+
+# Question 1  
+
+a. Display the data `penguins`.  
+
+b. Make sure you understand the columns we have in this dataset.  
+
+c. Filter out penguins for which sex is missing.  
+
+d. Select variables species, island, bill_length_mm and body_mass_g.  
+
+e. Store the new dataset in a dat object.  
+
+
+# Question 2  
+
+a. How many penguins do we have in the dataset?  
+
+b. How many species?   
+
+c. How many islands?   
+
+d. Count the number of penguins per species.   
+
+e. Count the number of penguins per species and per island.    
+
+
+# Question 3  
+
+a. Calculate the overall mean body mass.  
+
+b. Calculate the mean body mass for each species.  
+
+c. Calculate the mean of both traits bill length and body mass measured for each species.   
+
+

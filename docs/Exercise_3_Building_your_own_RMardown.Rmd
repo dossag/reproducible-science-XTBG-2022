@@ -1,0 +1,57 @@
+---
+title: "Reproducible science workshop"
+Subtitle: "Exercise 3 Buildind your own RMarkdown Solution"
+author: "[**_Gbadamassi G.O. Dossa_**](https://scholar.google.com/citations?user=w20AkZcAAAAJ&hl=en)"
+date: (Created on Aug 31 2021 and last updated on `r format(Sys.time(), "%a %b %d %Y %H:%M:%S")`)
+output: 
+#rmdformats::material
+  html_document:
+    fig_caption: yes #Enabling figure caption
+    theme: spacelab #readable #sandstone #spacelab #flatly
+    highlight: pygments #tango #kate
+    toc: TRUE # Enabling table of content (toc) on the left side of output
+    toc_depth: 3 # Showing toc up to 3 headings below (i.e.,1, 1.1, 1.1.1)
+    number_sections: TRUE # Number sections
+    toc_float:
+      collapsed: TRUE # Allows the toc to collapse if the reading section is not concerned
+      smooth_scroll: TRUE # Allows smoth scrolling of toc
+      toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+In this current exercise, you are asked:
+
+1. Please give "My first R Markdown document" as your document title, construct your first R markdown document that reproduces exactly the formatting of the workshop introduction first paragraph document at [click here](https://dossag.github.io/reproducible-science-afec-x-2021/) by replacing Dossa's information by your own (e.g., replace **Dossa** by **your_name**). Make sure you put in italic what should be in italic and in bold what you should be in bold;
+
+2. Give first level heading "Photos":
+
+    2.1. Give second level heading ("My institute logo: full size"), download the logo of your current institute and add it in your R markdown document as a big size ;
+
+    2.2. Give second level heading ("My institute logo: small size), repeat the previous question but by this time reducing the size of the photo output;
+
+    2.3. Give second level heading ("My personal photo") to add a photo of yourself but here add a caption as follows (Figure 3: Photo of "your_name");
+
+3. Give first level heading ("Tables")
+
+    3.1. Give a second level heading ("Table by hand") Include by hand a table of at of three column named ("Names", "Sex") and at least 2 rows, fill in rows the names of yourself, your peer's names,and the name of supervisor or your current boss; the sex of each person, the highest degree of each person, the height of each person;
+
+
+    3.2. Add an inline code that renders the mean height of all persons included in your table;
+
+    3.3. Give second level heading ("Table with RMarkdown generator"), include the same table as above but by using [RMarkdown table generator]();
+[Please put the content of the table in **right alignment**]
+
+4. Give first level heading ("Reading paper") 
+Introduce the name of your article you read of first day in put this title in bold with the name of the first author in italic. Make sure you attach a link to it the title so at a click we can get to the online version of that article
+
+5. Give a first level heading ("Conclusion")
+
+Add the quote you have from your article in italic and write  the last sentence. "Now, i am close to adopt reproducibility and I am proud of myself" 
+
+6. to knitr your document to get a ***html*** document.
+
+
+7. Save the html as "your_name_exo3.html"and share on our wechat group.

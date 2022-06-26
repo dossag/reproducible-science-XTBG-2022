@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Reproducible science: Module2</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Gbadamassi G.O. Dossa" />
+    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Reproducible science: Module2
+## Bridging the gap among actors
+### <a href="https://scholar.google.com/citations?user=w20AkZcAAAAJ&amp;hl=en">Gbadamassi G.O. Dossa</a>
+### Xishuangbanna Tropical Botanical Garden, XTBG-CAS
+### 2021/09/20 (updated: 2021-11-02)
+
+---
+
+
+class: center, middle
+# Acknowledgements
+The content of this module are based on materials from:
+
+.pull-right[
+![Roger D. Peng material](img/roger_peng.png)
+]
+.pull-right[
+[Roger D. Peng's materials](https://publichealth.jhu.edu/faculty/1549/roger-d-peng)
+]
+
+---
+class: center, middle
+# Where is the Gap?
+![Where is the gap](img/Reproducible Research bridge gap.png)
+---
+class: center
+# How can we bridge the gap?
+![How can we bridge the gap](img/Reproducible R gap filled.png)
+
+---
+class: center
+# Research pipeline 
+![Data science pipeline with highlight box](img/data science pipeline with highlight box.png)
+Please examine again this pipeline.
+---
+
+class: center
+
+# Recent developments in reproducible research
+![Recent developments in RR](img/Reproducible Research recent development.png)
+---
+class: center
+
+# What do we need for reproducible research?
+
+--
+.left[
+- Analytic data are available;
+]
+--
+.left[
+- Analytic code are available;
+]
+--
+.left[
+- Documentation of code and data;
+]
+--
+.left[
+- Standard means of distribution.
+]
+
+---
+class: center
+
+# Who are the players?
+.left[
+- Authors:
+
+    -&gt; Want to make their research reproducible
+
+    -&gt; Want tools for RR to make their lives easier (or at least not much harder)
+]
+
+--
+.left[
+- Readers:
+
+    -&gt; Want to reproduce (and perhaps expand upon) interesting findings
+
+    -&gt; Want tools for RR to make their lives easier
+]
+---
+class: center
+
+# Existing chalenges
+.left[
+- Authors must undertake considerable effort to put data/results on the web (may not have resources like a web server);
+
+
+- Readers must download data/results individually and piece together which data go with which code sections, etc.;
+
+
+- Readers may not have the same resources as authors;
+
+
+- Few tools to help authors/readers (although toolbox is growing!).
+]
+---
+class: center
+
+# Responses to challenges: in reality
+
+.left[
+- Authors
+
+      -&gt; Just put stuff on the web
+
+      -&gt; (Infamous) Journal supplementary materials
+
+      -&gt; There are some central databases for various fields (e.g. biology, ICPSR)
+]
+
+--
+
+
+
+.left[
+- Readers
+
+      -&gt; Just download the data and (try to) figure it out
+
+      -&gt; Piece together the software and run it
+]
+
+
+---
+class: center
+
+# Literate (statistical) programming
+
+.left[
+
+- An article is a stream of text and code;
+
+- Analysis code is divided into text and code chunks;
+
+- Each code chunk loads data and computes results.
+]
+--
+
+.left[
+
+- Presentation code formats results (tables, figures, etc.);
+
+- Article text explains what is going on;
+
+- Literate programs can be weaved to produce human-readable documents and tangled to produce machine-readable documents.
+
+]
+---
+class: center
+
+# Literate (statistical) programming 2
+
+.left[
+Literate programming is a general concept that requires:
+
+- A documentation language (human readable);
+
+- A programming language (machine readable):
+    1. Sweave uses L&lt;sup&gt;A&lt;/sup&gt;T&lt;sup&gt;E&lt;/sup&gt;X and R as the documentation and programming languages
+
+    2. Sweave was developed by Friedrich Leisch (member of the R Core) and is maintained by R core
+
+[Sweave's main web site](http://www.statistik.lmu.de/~leisch/Sweave).
+]
+
+---
+class: center
+
+# Sweave Limitations
+
+.left[
+Sweave has many limitations:
+
+
+- Focused primarily on LaTeX language, a difficult to learn markup language used only by weirdos;
+
+- Lacks features like caching, multiple plots per chunk, mixing programming languages and many other technical items;
+
+- Not frequently updated or very actively developed.
+]
+
+--
+
+.left[So is there any alternative to Sweave?
+] 
+
+---
+class: center
+# Alternative to Sweave: knitr
+
+.left[
+- Yes, there is knitr is an alternative (more recent) package to Sweave developed by [**Yihui Xie**](https://yihui.org/en/about/);
+
+- Brings together many features added on to Sweave to address limitations;
+
+- knitr uses R as the programming language and variety of documentation languages LaTeX, Markdown, HTML;
+
+- knitr was developed by Yihui Xie (while a graduate student in statistics at Iowa State);
+
+- See [*knitr*](http://yihui.name/knitr/) for more and in lectures later.	
+]
+
+---
+class: center
+# Does reproducibility consume more time?
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="img/time-saving.png" alt="Reproducibilit equals effecient use of time" width="80%" /&gt;
+&lt;p class="caption"&gt;Reproducibilit equals effecient use of time&lt;/p&gt;
+&lt;/div&gt;
+
+---
+class: center
+# Summary
+
+.left[
+- Reproducible research is important as a minimum standard, particularly for studies that are difficult to replicate;
+
+- Infrastructure is needed for creating and distributing reproducible documents, beyond what is currently available;
+
+- There is a growing number of tools for creating reproducible documents.
+
+]
+
+---
+
+class: center, middle
+
+# Thank you for listening!
+Any questions now or email me at [**dossa@xtbg.org.cn**](http://people.ucas.edu.cn/~Dossa?language=en)
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr/), and [R Markdown](https://rmarkdown.rstudio.com).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

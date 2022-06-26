@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Reproducible science: Module5</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Gbadamassi G.O. Dossa" />
+    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Reproducible science: Module5
+## Literate statistical programming knitr
+### <a href="https://scholar.google.com/citations?user=w20AkZcAAAAJ&amp;hl=en">Gbadamassi G.O. Dossa</a>
+### Xishuangbanna Tropical Botanical Garden, XTBG-CAS
+### 2021/10/1 (updated: 2021-11-02)
+
+---
+
+
+class: center, middle
+# Acknowledgements
+The content of this module are based on materials from:
+
+.pull-right[
+![Roger D. Peng material](roger_peng.png)
+]
+.pull-right[
+[Roger D. Peng's materials](https://publichealth.jhu.edu/faculty/1549/roger-d-peng)
+]
+
+---
+class: center
+# Problems
+.left[
+- Authors must undertake considerable effort to put data/results on the web
+
+- Readers must download data/results individually and piece together which data go with which code sections, etc.
+- Authors/readers must manually interact with websites
+
+- There is no single document to integrate data analysis with textual representations; i.e. data, code, and text are not linked
+
+]
+
+---
+class: center
+# Literate statistical Programming
+.left[
+- Original idea comes from Don Knuth
+
+- An article is a stream of text and code
+
+- Analysis code is divided into text and code "chunks"
+
+- Presentation code formats results (tables, figures, etc.)
+
+- Article text explains what is going on
+
+- Literate programs are weaved to produce human-readable documents and tangled to produce machine-readable documents
+]
+
+---
+class:center
+
+# Literate Statistical Programming
+
+.left[
+* Literate programming is a general concept. We need
+  
+  - A documentation language
+
+  - A programming language
+
+* The original Sweave system developed by Friedrich Leisch used LaTeX and R
+
+* knitr supports a variety of documentation languages
+]
+
+---
+class: center
+# When to decide to work reproducibly?
+.left[
+
+- Decide to do it (ideally from the start)
+
+- Keep track of things, perhaps with a version control system to track snapshots/changes [later in the workshop]
+
+- Use software whose operation can be coded [R]
+
+- Don't save output [R]
+
+- Save data in non-proprietary formats
+]
+
+---
+class: center
+# Literate programming: Pros
+.left[
+- Text and code all in one place, logical order
+
+- Data, results automatically updated to reflect external changes
+
+- Code is live--automatic "regression test" when building a document
+
+]
+---
+class: center
+
+# Literate programming: Cons
+.left[
+- Text and code all in one place; can make documents difficult to read, especially if there is a lot of code
+
+- Can substantially slow down processing of documents (although there are tools to help)
+]
+
+---
+class: center
+# Knitr: Definition &amp; usages
+.left[
+* An R package written by Yihui Xie (while he was a grad student at Iowa State)
+ 
+   - Available on CRAN
+
+* Supports RMarkdown, LaTeX, and HTML as documentation languages
+
+* Can export to PDF, HTML, Word
+
+* Built right into RStudio for your convenience
+]
+
+---
+class: center
+
+# Knitr: Requirements
+.left[
+- A recent version of R
+
+- A text editor (the one that comes with RStudio is okay)
+
+- Some support packages also available on CRAN
+
+- Some knowledge of Markdown, LaTeX, or HTML
+
+- We will use Markdown here
+
+]
+
+---
+class: center
+
+# What is Markdown?
+.left[
+
+- A simplified version of "markup" languages
+
+- No special editor required
+
+- Simple, intuitive formatting elements
+
+- Complete information available at http://goo.gl/MUt9i5
+]
+
+---
+class: center
+
+# What is knitr good For?
+.left[
+- Writing manuals/manuscript
+
+- Short/medium-length technical documents
+
+- Tutorials
+
+- Reports (esp. if generated periodically)
+
+- Data preprocessing documents/summaries
+]
+
+---
+class: center
+
+# What is knitr not good for?
+.left[
+- Very long research articles
+
+- Complex time-consuming computations
+
+- Documents that require precise formatting &amp; complicated formating
+]
+
+---
+class: center
+
+# How to create knitr document
+&lt;img src="knitr20.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+# First knitr document as example
+&lt;img src="knitr2.png" width="90%" style="display: block; margin: auto;" /&gt;
+---
+class: center
+# Processing a knitr document: one click
+&lt;img src="knitr3.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+# Processing a knitr document: one click
+.left[
+- library(knitr)setwd(&lt;working directory&gt;)
+
+- knit2html(“document.Rmd”)
+
+- browseURL(“document.html”)
+
+]
+---
+class: center
+# Knitr to HTML Output
+&lt;img src="knitr4.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+# What knitr produces: Markdown
+&lt;img src="knitr5.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+class:center
+# A few notes
+.left[
+- knitr will fill a new document with filler text; delete it
+
+- Code chunks begin with ```{r} and end with ```
+
+- All R code goes in between these markers
+
+- Code chunks can have names, which is useful when we start making graphics```{r firstchunk}## R code goes here```
+
+- By default, code in a code chunk is echoed, as will the results of the computation (if there are results to print)
+]
+
+---
+class: center
+# Processing of knitr Documents (behind the hood)
+.left[
+- You write the RMarkdown document (.Rmd)
+
+- knitr produces a Markdown document (.md)
+
+- knitr converts the Markdown document into HTML (by default)
+.Rmd --&gt; .md --&gt;.html
+
+- You should NOT edit (or save) the .md or .html documents until you are finished
+
+]
+
+---
+class: center
+# Another Example
+
+&lt;img src="knitr6.png" width="90%" style="display: block; margin: auto;" /&gt;
+---
+class: center
+# Output
+
+&lt;img src="knitr7.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+# Hiding Results
+
+&lt;img src="knitr8.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+# Output
+&lt;img src="knitr9.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+# Inline Text Computations
+&lt;img src="knitr10.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+# Inline Text Computations (output)
+
+&lt;img src="knitr11.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+
+# Incorporating Graphics
+&lt;img src="knitr12.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+
+# What knitr Produces in HTML
+&lt;img src="knitr13.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+# Incorporating Graphics
+&lt;img src="knitr15.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+# Making Tables with xtable
+&lt;img src="knitr16.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+
+# Making Tables with xtable (output)
+&lt;img src="knitr17.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+
+# Setting Global Options
+.left[
+
+- Sometimes we want to set options for every code chunk that are different from the defaults
+
+- For example, we may want to suppress all code echoing and results output
+
+- We have to write some code to set these global options
+
+]
+---
+class: center
+# Setting Global Options
+
+&lt;img src="knitr18.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+
+# Setting Global Options (output)
+
+&lt;img src="knitr19.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+
+# Some common options
+.left[
+- Output
+    
+    + results: “asis”, “hide”
+    
+    + echo: TRUE, FALSE
+
+- Figures
+
+    + fig.height: numeric
+
+    + fig.width: numeric
+
+]
+
+---
+class: center
+
+# Caching computation
+
+.left[
+
+- What if one chunk takes a long time to run?
+
+- All chunks have to be re-computed every time you re-knit the file
+
+- The cache=TRUE option can be set on a chunk-by-chunk basis to store results of computation
+
+- After the first run, results are loaded from cache
+
+]
+
+---
+class: center
+# Caching caveats
+.left[
+- If the data or code (or anything external) changes, you need to re-run the cached code chunks
+
+- Dependencies are not checked explicitly
+
+- Chunks with significant side effects may not be cacheable
+]
+
+---
+class: center
+
+# summary
+
+.left[
+
+- Literate statistical programming can be a useful way to put text, code, data, output all in one document
+
+- knitr is a powerful tool for integrating code and text in a simple document format
+
+]
+---
+class: center, middle
+
+# Thank you for listening!
+Any questions now or email me at [**dossa@xtbg.org.cn**](http://people.ucas.edu.cn/~Dossa?language=en)
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr/), and [R Markdown](https://rmarkdown.rstudio.com).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

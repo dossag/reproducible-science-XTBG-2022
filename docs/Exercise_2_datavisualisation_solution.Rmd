@@ -1,0 +1,324 @@
+---
+ttitle: "Reproducible science workshop"
+subtitle: "Exercise 2 Data visualization: ggplot2-solutions"
+date: (Created on Sept 31 2021 and last updated on `r format(Sys.time(), "%a %b %d %Y %H:%M:%S")`)
+output: 
+#rmdformats::material
+  html_document:
+    fig_caption: yes
+    theme: spacelab #readable #sandstone #spacelab #flatly
+    highlight: pygments #tango #kate
+    toc: TRUE
+    toc_depth: 3
+    number_sections: TRUE
+    toc_float:
+      collapsed: TRUE
+      smooth_scroll: TRUE
+      toc: true
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+#options(htmltools.dir.version = FALSE)
+#knitr::opts_chunk$set(comment = "", warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+library(palmerpenguins)
+library(tidyverse)
+```
+
+# Motivation
+
+We use data from package `palmerpenguins` to familiarize ourselves with data visualization with the tidyverse. We first load the packages we will need. 
+```{r}
+library(palmerpenguins)
+library(tidyverse)
+```
+
+
+# Question 1a: histogram of body mass
+a. Build a histogram of body mass.   
+
+```{r}
+penguins%>%
+  glimpse()
+```
+
+```{r question1a, eval = FALSE}
+penguins %>%
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram()
+```
+
+```{r question1a, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+
+
+# Question 1b: a color per species
+b. Fill in histogram with a color per species.      
+
+```{r question1b, eval = FALSE}
+penguins %>%
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram(aes(fill = species))
+```
+
+```{r question1b, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+
+
+# Question 1c: darkorange, purple and cyan4
+c. Change the color by default to darkorange, purple and cyan4.    
+
+```{r question1c, eval = FALSE}
+penguins %>%
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram(aes(fill = species)) +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) 
+```
+
+
+```{r question1c, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+
+
+# Question 1d: adjust transparency
+
+d. Adjust transparency for all three histograms.     
+
+```{r question1d, eval = FALSE}
+penguins %>%
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram(aes(fill = species), alpha = 0.5) +
+  scale_fill_manual(values = c("darkorange","purple","cyan4")) 
+```
+
+```{r question1d, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+
+
+# Question 1e: add titles
+e. Add a title to the axes, the legend and the figure.    
+
+
+```{r question1e, eval = FALSE}
+penguins %>%
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram(aes(fill = species), 
+                 alpha = 0.5) +
+  scale_fill_manual(values = c("darkorange",
+                               "purple",
+                               "cyan4")) +
+  labs(x = "Body mass (g)",
+       y = "Frequency",
+       title = "Penguin body mass",
+       fill = "Penguin species")
+```
+
+
+```{r question1e, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+
+
+
+# Question 1f: change theme
+f. Change the theme used by default.    
+
+```{r question1f, eval = FALSE}
+penguins %>%
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram(aes(fill = species), 
+                 alpha = 0.5) +
+  scale_fill_manual(values = c("darkorange",
+                               "purple",
+                               "cyan4")) +
+  labs(x = "Body mass (g)",
+       y = "Frequency",
+       title = "Penguin body mass",
+       fill = "Penguin species") +
+  theme_minimal()
+```
+
+
+```{r question1f, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+
+# Question 1g: split by sex
+g. Do a-f for males and females and display on same figure.    
+
+```{r question1g, eval = FALSE}
+penguins %>%
+# filter out penguins w/ missing sex
+  filter(!is.na(sex)) %>% 
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram(aes(fill = species),
+# fill histogram, adjust transparency                 
+                 alpha = 0.5) + 
+# change colour
+  scale_fill_manual(values = c("darkorange",
+                               "purple",
+                               "cyan4")) + 
+  labs(x = "Body mass (g)", # x lab
+       y = "Frequency", # y lab
+       title = "Penguin body mass", 
+       fill = "Penguin species") + 
+  theme_minimal() + # change theme
+# hist by sex, w/ diff X scale
+  facet_wrap(~sex, scales = "free_x") 
+```
+There is NA in sex so we need to filter our them before plotting.
+
+```{r , eval = FALSE}
+penguins %>%
+# filter out penguins w/ missing sex
+  filter(!is.na(sex)) %>% 
+  ggplot() +
+  aes(x = body_mass_g) + 
+  geom_histogram(aes(fill = species),
+# fill histogram, adjust transparency                 
+                 alpha = 0.5) + 
+# change colour
+  scale_fill_manual(values = c("darkorange",
+                               "purple",
+                               "cyan4")) + 
+  labs(x = "Body mass (g)", # x lab
+       y = "Frequency", # y lab
+       title = "Penguin body mass", 
+       fill = "Penguin species") + 
+  theme_minimal() + # change theme
+# hist by sex, w/ diff X scale
+  facet_wrap(~sex, scales = "free_x") 
+```
+
+
+```{r, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+
+
+# Question 2a: scatter plot
+a. Build a scatter plot of body mass with respect to flipper length.      
+
+
+```{r question2a, eval = FALSE}
+penguins %>% 
+  ggplot() + 
+  aes(x = flipper_length_mm,
+      y = body_mass_g) +
+  geom_point() +
+  theme_bw()
+```
+
+
+
+```{r question2a, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+
+
+# Question 2b: species-specific shapes
+b. Consider a shape for the points by allowing different species with d. Increase point size and adjust transparency. 
+
+
+```{r question2b, eval = FALSE}
+penguins %>% 
+  ggplot() + 
+  aes(x = flipper_length_mm,
+      y = body_mass_g) +
+  geom_point(aes(shape = species),
+             size = 3,
+             alpha = 0.5) +
+  theme_minimal()
+```
+
+
+```{r question2b, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+
+# Question 2c: species-specific colors
+c. Consider a color for the points different for each species. Increase point size and adjust transparency.   
+
+```{r question2c, eval = FALSE}
+penguins %>% 
+  ggplot() + 
+  aes(x = flipper_length_mm,
+      y = body_mass_g) +
+  geom_point(aes(color = species),
+             size = 3,
+             alpha = 0.8) +
+  theme_minimal()
+```
+
+Different shapes and different colours
+```{r , eval = FALSE}
+penguins %>% 
+  ggplot() + 
+  aes(x = flipper_length_mm,
+      y = body_mass_g) +
+  geom_point(aes(color = species, shape= species),
+             size = 3,
+             alpha = 0.8) +
+  theme_minimal()
+```
+
+
+```{r question2c, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+
+
+# Question 2d: species-specific shapes and colors
+d. Combine b-c.    
+
+
+```{r question2d, eval = FALSE}
+penguins %>% 
+  ggplot() + 
+  aes(x = flipper_length_mm,
+      y = body_mass_g) +
+  geom_point(aes(color = species,
+                 shape = species),
+             size = 3,
+             alpha = 0.8) +
+  theme_minimal()
+```
+
+
+```{r question2d, echo = FALSE, fig.width = 5.5, fig.asp = 0.618, dev = "svg"}
+```
+
+
+# Question 2e: add titles
+
+e. Change colors to darkorange, purple and cyan4. Add titles to axes, legend and figure.     
+
+
+```{r question2e, eval = FALSE}
+penguins %>% 
+  ggplot() + 
+  aes(x = flipper_length_mm,
+      y = body_mass_g) +
+  geom_point(aes(color = species, 
+                 shape = species),
+             size = 3,
+             alpha = 0.8) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(title = "Penguin body mass wrt flipper length",
+       subtitle = "for Adelie, Chinstrap and Gentoo species",
+       x = "Flipper length (mm)",
+       y = "Body mass (g)",
+       color = "Penguin species",
+       shape = "Penguin species") +
+  theme_minimal()
+```
+
+
+
+# Question 2e
+
+```{r question2e, echo = FALSE, fig.width = 5.5, fig.asp = 0.818, dev = "svg"}
+```
+
+

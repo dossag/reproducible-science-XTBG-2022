@@ -1,0 +1,69 @@
+---
+title: "Data visualisation"
+subtitle: "Exercise 2 Tidyverse Data visualization"
+author: "[**_Gbadamassi G.O. Dossa_**](https://scholar.google.com/citations?user=w20AkZcAAAAJ&hl=en)"
+date: (Created on Sept 31 2021 and last updated on `r format(Sys.time(), "%a %b %d %Y %H:%M:%S")`)
+output: 
+#rmdformats::material
+  html_document:
+    fig_caption: yes
+    theme: spacelab #readable #sandstone #spacelab #flatly
+    highlight: pygments #tango #kate
+    toc: TRUE
+    toc_depth: 3
+    number_sections: TRUE
+    toc_float:
+      collapsed: TRUE
+      smooth_scroll: TRUE
+      toc: true
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+#options(htmltools.dir.version = FALSE)
+#knitr::opts_chunk$set(comment = "", warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+![](lter_penguins.png)
+
+
+# Motivation
+
+We use data from package `palmerpenguins` to familiarize ourselves with data visualization with the tidyverse. We first load the packages we will need. 
+```{r}
+library(palmerpenguins)
+library(tidyverse)
+```
+
+
+# Question 1
+
+a. Build a histogram of body mass.   
+
+b. Fill in histogram with a color per species.      
+
+c. Change the color by default to darkorange, purple and cyan4.    
+
+d. Adjust transparency for all three histograms.     
+
+e. Add a title to the axes, the legend and the figure.    
+
+f. Change the theme used by default.    
+
+g. Do a-f for males and females and display on same figure.    
+
+
+
+# Question 2
+
+a. Build a scatter plot of body mass wither respect to flipper length.      
+
+b. Consider a shape for the points different for each species. Increase point size and adjust transparency. 
+
+c. Consider a color for the points different for each species. Increase point size and adjust transparency.   
+
+d. Combine b-c.    
+
+e. Change colors to darkorange, purple and cyan4. Add titles to axes, legend and figure.     
+
+
