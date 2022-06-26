@@ -40,17 +40,17 @@ Anyone who carries out research either as student, or research staff and seeks g
 
 # Timeline
 
-* Motivations and intro [[Module1](slides/Module1_introduction.html)]]
-* Bridging the gap among actors| [video]()] [[Module2](slides/Module2_Bridging_the_gap_among_actors.html) | [video]()]
-* Dealing with data analysis in the `tidyverse` [[Module3]() | [Exercise]() | [solutions](Excercise_1_Data_manipulation_solution.html) | [video]()]
-* Dealing with data analysis in the `tidyverse` using `ggplot2` [[Module4](slides/Module4_Data_visualization_ggplot2.html) | [Exercise]() | [solutions]() | [video]()]
-* Literate statistical programming: `knitr` [[Module5]() | [Exercise]() | [solutions]() | [video]()]
-* R Markdown [[Module6]() | [practical]() | [solutions]() | [video]()]
-* Version control Git and Github [[Module7]() | [practical]() | [solutions]() | [video]()]
-* Extra class on git and Github [[Module7_extra]() | [practical](slides/Module7_extra.pdf) | [solutions]() | [video]()]
-* Module8: R project [[Module]() | [practical]() | [video]()]
-* Module9: Reproducible: Good enough workflow [[Module]() | [video]()]
-
+* Module 1: Motivations and intro [[Module1](slides/Module1_introduction.html)]]
+* Module 2: Bridging the gap among actors| [video]()] [[Module2](slides/Module2_Bridging_the_gap_among_actors.html) | [video]()]
+* Module 3: Dealing with data analysis in the `tidyverse` [[Module3]() | [Exercise]() | [solutions](Excercise_1_Data_manipulation_solution.html) | [video]()]
+* Module 4: Dealing with data analysis in the `tidyverse` using `ggplot2` [[Module4](slides/Module4_Data_visualization_ggplot2.html) | [Exercise]() | [solutions]() | [video]()]
+* Module 5: Literate statistical programming: `knitr` [[Module5]() | [Exercise]() | [solutions]() | [video]()]
+* Module 6: R Markdown [[Module6]() | [practical]() | [solutions]() | [video]()]
+* Module 7: Version control Git and Github [[Module7]() | [practical]() | [solutions]() | [video]()]
+* Module 8: Extra class on git and Github [[Module7_extra]() | [practical](slides/Module7_extra.pdf) | [solutions]() | [video]()]
+* Module 9: R project [[Module]() | [practical]() | [video]()]
+* Module 10: Reproducible: Good enough workflow [[Module]() | [video]()]
+* Module 11: Extras (Writing article in R markdown, Quarto (If time permits)) [[Module]() | [video]()]
 
 # Requirements
 

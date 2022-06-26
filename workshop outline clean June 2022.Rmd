@@ -1,0 +1,122 @@
+---
+title: "Reproducible science workshop"
+author: "[**_Gbadamassi G.O. Dossa_**](https://scholar.google.com/citations?user=w20AkZcAAAAJ&hl=en)"
+date: Time <upperscript>(Created on Aug 31 2021 and last updated on `r format(Sys.time(), "%a %b %d %Y %H:%M:%S")`)</upperscript>
+output: 
+#rmdformats::material
+  html_document:
+    fig_caption: yes
+    theme: spacelab #readable #sandstone #spacelab #flatly
+    highlight: pygments #tango #kate
+    toc: TRUE
+    toc_depth: 3
+    number_sections: TRUE
+    #toc_float:
+    #  collapsed: TRUE
+    #  smooth_scroll: TRUE
+    #  toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The following is the tentative outline of a four day workshop that will be held in Xishuangbanna Tropical Botanical Garden [(XTBG)](http://english.xtbg.cas.cn/) from **June 27-30 2022**. The purpose of this workshop is to get participants familiar with the concept of ***reproducible science*** that is surprisingly not commonly taught but which is becoming a requirement for better collaboration (not only with others but with oneself through time) and for credible science. At the end of this workshop, attendees should be familiar with tools use to achieve reproducible science, will be more confident with themselves, and be inclined to adopt these tools which will ease their collaboration with themselves as well as others. This course consists of 11 main modules which aim to put everything from data to final report including r code and some interpretations. The workshop is designed with exercises as step by step work me through approach. This course will be mainly taught by Dossa G.G.O. [click here to email me](mailto:dossa@xtbg.org.cn). Dossa has been teaching part of this workshop as a short module at the yearly postgraduate Advanced Fieldcourse in Ecology and Conservation -- XTBG [AFEC-X](https://www.pfs-tropasia.org/) for the past three years.
+
+***Who should attend this course?***
+
+Anyone who carries out research either as student, or research staff and seeks guidance to manage data efficiently, to improve peers credibility in their research output, and is keen to make science solid and credible. Consider thinking about the following questions:
+
+-   Have you ever worked collaboratively with others, and received multiple comments that you needed to deal with?
+-   Have you been ever asked by your collaborators/supervisor to go back to previous version of your manuscripts/analysis/ results?
+-   Have you ever thought that you finalized an analysis but to realize a mistake was in the data file?
+-   Have you ever spent endless time to explain your past / current projects to your collaborators (including yourself) but realize you even do not remember what you did at some point or why you did certain things?
+-   Have you ever copied a table from R/SPSS/Minitab/SAS to excel, and subsequently from Excel to your word processing document? And most annoyingly, you need to repeat these steps whenever anything has changed in the analysis or code.
+
+
+If you answer **Yes** to any of the above questions then, this workshop is designed for you. Above all, there are five selfish reasons for why you would love to take this workshop click here [***Five selfish reasons***](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7) to learn more about these reasons.
+
+***Why you should attend this course?***
+
+Increasing number of publishers require not only to make supporting data of a given publication available to the scientific community but nowadays, even the r code (or any language code [***Reproducible code***](https://www.britishecologicalsociety.org/wp-content/uploads/2019/06/BES-Guide-Reproducible-Code-2019.pdf)) that supports findings and traces back the actual data analysis becomes compulsory. In any case, submitting the data and the R Markdown file to the publisher solves this requirement and saves researcher's time.
+
+***Preparation prior to the workshop***
+
+Now that you have made your mind to take this workshop, first of all thank you for trusting us. Second, as future attendees you are required to install the following software and create account when necessary on your own beforehand:
+
+1.	[Git](https://git-scm.com/downloads)
+
+4.	[Create a Github account on](https://github.com/)
+
+5.	[Download a Github desktop](https://desktop.github.com/)
+
+2.	[Download and install R](https://cran.r-project.org/)
+
+3.	[Download RStudio](https://www.rstudio.com/products/rstudio/download/)
+
+Below are books you can read at your spare time not required to read before the course.
+
+
+6.	[Book about  Github](https://orchid00.github.io/actions_sandbox/)
+
+7.  [Ggplot2 second edition](https://r-graphics.org/)
+
+8.  [R Markdown book](https://bookdown.org/yihui/rmarkdown-cookbook/)
+
+Also I highly recommend the two following documents: (i) [***Five selfish reasons***](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7) and (ii) [***Reproducible code***](https://www.britishecologicalsociety.org/wp-content/uploads/2019/06/BES-Guide-Reproducible-Code-2019.pdf).
+
+
+***Workshop content***
+
+1. Module 1: Launching workshop-Replication and reproducibility
+
+2. Module 2: Bringing the gaps among actors
+
+3. Module 3: Dealing with data: Tidyverse
+
+4. Module 4: Data visualization in Tidyverse: the power of ggplot2
+
+5. Module 5: Literate statistical programming knitr
+
+6. Module 6: R Markdown
+
+9. Module 9: Workflow for reproducible work-Project
+
+7. Module 7: Version control- Git and Github
+
+8. Module 8: Git, Github and R Studio- A good trio
+
+11. Module 11: Extras (Writing article in R markdown, Quarto (If time permits))
+
+10. Module 10: R project
+
+***Workshop schedule***
+
+The tentative schedule per day is as follow:
+
+- Day one
+
+Morning session **09:00 - 11:50 AM Modules 1 & 2**
+
+Afternoon session **2:30 - 5:30 PM Modules 3**
+
+- Day two
+
+Morning session **09:00 - 11:50 AM Modules  4 & 5**
+
+Afternoon session **1:30 - 4:00 PM Modules 6 & 7**
+
+- Day three
+
+Morning session **09:00 - 11:50 AM Modules 8**
+
+Afternoon session **2:30 - 5:30 PM Modules 9**
+
+- Day four
+
+Morning session **09:00 - 11:50 AM Modules 10 & 11**
+
+Afternoon session **2:30 - 5:30 PM Module 11 continued and outstanding questions** 
+
+The above schedule is subject to change depending on how we advance in the workshop. This is a workshop so there will be priority given to practice and questions from attendees to make sure to learn valuable skills with your time.
+

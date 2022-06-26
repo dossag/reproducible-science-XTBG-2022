@@ -1,7 +1,7 @@
 ---
 title: "Reproducible science: Module 9"
 subtitle: "Workflow for reproducible work: Project"
-author: "[Gbadamassi G.O. Dossa](https://scholar.google.com/citations?user=w20AkZcAAAAJ&hl=en)"
+author: "[Gbadamassi G.O. Dossa](dossa@xtbg.org.cn)"
 institute: "Xishuangbanna Tropical Botanical Garden, XTBG-CAS"
 date: "2021/10/22 (updated: `r Sys.Date()`)"
 output:
