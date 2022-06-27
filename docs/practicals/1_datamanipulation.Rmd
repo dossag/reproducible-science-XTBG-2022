@@ -1,6 +1,6 @@
 ---
 title: "Data manipulation"
-author: "[**_Gbadamassi G.O. Dossa_**](https://scholar.google.com/citations?user=w20AkZcAAAAJ&hl=en)"
+author: "[**_Gbadamassi G.O. Dossa_**](dossa@xtbg.org.cn)"
 date: "last updated: `r Sys.Date()`"
 output:
   xaringan::moon_reader:

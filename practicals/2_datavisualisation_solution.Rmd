@@ -1,6 +1,6 @@
 ---
 title: "Data visualisation - solutions"
-author: "[**_Gbadamassi G.O. Dossa_**](https://scholar.google.com/citations?user=w20AkZcAAAAJ&hl=en)"
+author: "[Gbadamassi G.O. Dossa](dossa@xtbg.org.cn)"
 date: "last updated: `r Sys.Date()`"
 output:
   xaringan::moon_reader:
@@ -57,7 +57,7 @@ penguins %>%
 
 .small-font[
 ```{r question1b, eval = FALSE}
-penguins %>%
+dossa1<-penguins %>%
   ggplot() +
   aes(x = body_mass_g) + 
   geom_histogram(aes(fill = species))
@@ -243,7 +243,7 @@ penguins %>%
       y = body_mass_g) +
   geom_point(aes(shape = species),
              size = 3,
-             alpha = 0.8) +
+             alpha = 0.5) +
   theme_minimal()
 ```
 ]

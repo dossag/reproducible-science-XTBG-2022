@@ -1,61 +1,30 @@
 ---
-title: "Data manipulation - solutions"
-author: "[Gbadamassi G.O. Dossa](dossa@xtbg.org.cn)"
-date: "last updated: `r Sys.Date()`"
-output:
-  xaringan::moon_reader:
-    css: [default, "slides-theme.css"]
-    lib_dir: libs
-    nature:
-      ratio: '16:9'
-      highlightStyle: github
-      highlightLines: true
-      slideNumberFormat: ''
-      titleSlideClass: [center, middle]
+title: "Data cleaning"
+author: "Gbadamassi G.O. Dossa"
+date: '2022-06-27'
+output: html_document
 ---
 
-```{r setup, include=FALSE, echo=FALSE}
-#options(htmltools.dir.version = FALSE)
-#knitr::opts_chunk$set(comment = "", warning = FALSE, message = FALSE)
-knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```{r setup, include=FALSE}
+#knitr::opts_chunk$set(echo = TRUE)
 library(palmerpenguins)
 library(tidyverse)
 ```
 
 
-class: center
-## Acknowledgements
-The content of this module are based on materials from:
-
-.pull-right[
-]
-.pull-right[
-[olivier gimenez's materials](https://oliviergimenez.github.io/)
-]
-
----
 
 ## Question 1a 
 
-.tiny-font[
 ```{r}
 penguins # display data
-glimpse(penguins)
-summary(penguins)
 ```
-]
-
----
 
 ## Question 1a 
 
-.tiny-font[
+
 ```{r}
 penguins %>% glimpse() # display data
 ```
-]
-
----
 
 ## Question 1b
 
@@ -65,51 +34,28 @@ dat <- penguins %>%
   filter(!is.na(sex)) %>% 
 # select variables
   select(species, island, bill_length_mm, body_mass_g) 
-
-glimpse(dat)
 ```
 
-
-```{r}
-penguins %>%
-# filter out missing sex
-  filter(!is.na(sex)) %>% 
-# select variables
-  select(species, island, bill_length_mm, body_mass_g)-> dat2 
-
-
-glimpse(dat2)
-```
----
 
 ## Question 2a
 
-.tiny-font[
+
 ```{r}
 dat # nb of penguins
 ```
-]
-
----
 
 ## Questions 2b and 2d
 
 ```{r}
 # nb of species, and penguins per species
 dat %>% count(species) 
-summary(dat)
 ```
-
----
 
 ## Questions 2b and 2d
 
 ```{r}
 dat %>% count(species, sort = TRUE) # idem, arranged by n
 ```
-
-
----
 
 ## Question 2c
 
@@ -118,32 +64,21 @@ dat %>% count(island) # nb of island, and penguins per island
 ```
 
 
----
-
 ## Question 2e
 
 ```{r}
 # penguins per species and island
-glimpse(dat)
 dat %>% count(species, island) 
 ```
 
-
-
----
-
 ## Question 3a: mean body mass
 
-.tiny-font[
+
 ```{r}
 # option 1
 dat %>%
   mutate(mean_bm = mean(body_mass_g))
-
 ```
-]
-
----
 
 ## Question 3a: mean body mass
 
@@ -154,22 +89,17 @@ dat %>%
 ```
 
 
----
 
 ## Question 3b: mean body mass per species
 
-.tiny-font[
+
 ```{r}
 # option 1
 dat %>%
   group_by(species) %>% 
   mutate(mean_bm = mean(body_mass_g))
 ```
-]
 
-
-
----
 
 ## Question 3b: mean body mass per species
 
@@ -181,8 +111,6 @@ dat %>%
 ```
 
 
----
-
 ## Question 3c: mean traits
 
 ```{r}
@@ -193,8 +121,6 @@ dat %>%
 ```
 
 
-
----
 
 ## Question 3c: mean traits
 

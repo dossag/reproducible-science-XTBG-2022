@@ -1,6 +1,6 @@
 ---
 title: "Data visualisation"
-author: "[**_Gbadamassi G.O. Dossa_**](https://scholar.google.com/citations?user=w20AkZcAAAAJ&hl=en)"
+author: "[Gbadamassi G.O. Dossa](dossa@xtbg.org.cn)"
 date: "last updated: `r Sys.Date()`"
 output:
   xaringan::moon_reader:

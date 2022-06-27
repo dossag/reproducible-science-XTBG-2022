@@ -1,7 +1,7 @@
 ---
 title: "Reproducible science: Module 4"
 subtitle: "Data visualization in Tidyverse: the power of ggplot2"
-author: "[Gbadamassi G.O. Dossa](https://scholar.google.com/citations?user=w20AkZcAAAAJ&hl=en)"
+author: "[Gbadamassi G.O. Dossa](dossa@xtbg.org.cn)"
 institute: "Xishuangbanna Tropical Botanical Garden, XTBG-CAS"
 date: "2021/09/28 (updated: `r Sys.Date()`)"
 output:
