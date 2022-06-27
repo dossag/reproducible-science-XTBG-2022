@@ -22,11 +22,11 @@ navbar:
         - text: "Module2 Bridging the gap among actors"
           href: slides/Module2_Bridging_the_gap_among_actors.html
         - text: "Module3: Data analysis with tidyverse"
-          href: 
+          href: slides/Module3_Dealing_with_data_analysis.html
         - text: "Module4: Data visualisation"
-          href: 
+          href: slides/Module4_Data_visualization_ggplot2.html
         - text: "Module5: Literate statistical programming: `knitr`"
-          href: 
+          href: slides/Module5_Literate_statistical_programming_knitr.html
         - text: "Module6: R Markdown"
           href: 
         - text: "Module7: Version control Git and Github"
@@ -45,13 +45,13 @@ navbar:
     - text: "Worksheets"
       menu:
         - text: "Exercise 1: Tidyverse data manipulation"
-          href: 
+          href: practicals/1_datamanipulation.html
         - text: "Exercise 1: Tidyverse data manipulation - Solutions"
-          href: 
+          href: practicals/1_datamanipulation_solution.html
         - text: "Exercise 2: Tidyverse ggplot2 data visualisation"
-          href: 
+          href: practicals/2_datavisualisation.html
         - text: "Exercise 2: Tidyverse ggplot2 data visualisation - Solutions"
-          href: 
+          href: practicals/2_datavisualisation_solution.html
         - text: "Exercise 3 : Building your own Rmarkdown document"
           href: 
         - text: "Exercise 3 : Building your own Rmarkdown document - Solutions"

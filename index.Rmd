@@ -5,8 +5,6 @@ site: distill::distill_website
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-
 # Learn more about creating websites with Distill at:
 # https://rstudio.github.io/distill/website.html
 
@@ -42,9 +40,9 @@ Anyone who carries out research either as student, or research staff and seeks g
 
 * Module 1: Launching workshop-Replication and reproducibility [[Module1](slides/Module1_introduction.html)| [solutions]() | [video]()]
 * Module 2: Bridging the gap among actors| [video]()] [[Module2](slides/Module2_Bridging_the_gap_among_actors.html) | [video]()]
-* Module 3: Dealing with data analysis in the `tidyverse` [[Module3]() | [Exercise]() | [solutions]() | [video]()]
-* Module 4: Dealing with data analysis in the `tidyverse` using `ggplot2` [[Module4]() | [Exercise]() | [solutions]() | [video]()]
-* Module 5: Literate statistical programming: `knitr` [[Module5]() | [Exercise]() | [solutions]() | [video]()]
+* Module 3: Dealing with data analysis in the `tidyverse` [[Module3](slides/Module3_Dealing_with_data_analysis.html) | [Exercise](practicals/1_datamanipulation.html) | [solutions](practicals/1_datamanipulation_solution.html) | [video]()]
+* Module 4: Dealing with data analysis in the `tidyverse` using `ggplot2` [[Module4](slides/Module4_Data_visualization_ggplot2.html) | [Exercise](practicals/2_datavisualisation.html) | [solutions](practicals/2_datavisualisation_solution.html) | [video]()]
+* Module 5: Literate statistical programming: `knitr` [[Module5](slides/Module5_Literate_statistical_programming_knitr.html) | [Exercise]() | [solutions]() | [video]()]
 * Module 6: R Markdown [[Module6]() | [practical]() | [solutions]() | [video]()]
 * Module 7: Version control Git and Github [[Module7]() | [practical]() | [solutions]() | [video]()]
 * Module 8: Extra class on git and Github [[Module7_extra]() | [practical](slides/Module7_extra.pdf) | [solutions]() | [video]()]

@@ -40,6 +40,8 @@ The content of this module are based on materials from:
 .tiny-font[
 ```{r}
 penguins # display data
+glimpse(penguins)
+summary(penguins)
 ```
 ]
 
@@ -63,8 +65,21 @@ dat <- penguins %>%
   filter(!is.na(sex)) %>% 
 # select variables
   select(species, island, bill_length_mm, body_mass_g) 
+
+glimpse(dat)
 ```
 
+
+```{r}
+penguins %>%
+# filter out missing sex
+  filter(!is.na(sex)) %>% 
+# select variables
+  select(species, island, bill_length_mm, body_mass_g)-> dat2 
+
+
+glimpse(dat2)
+```
 ---
 
 ## Question 2a
@@ -82,6 +97,7 @@ dat # nb of penguins
 ```{r}
 # nb of species, and penguins per species
 dat %>% count(species) 
+summary(dat)
 ```
 
 ---
@@ -108,6 +124,7 @@ dat %>% count(island) # nb of island, and penguins per island
 
 ```{r}
 # penguins per species and island
+glimpse(dat)
 dat %>% count(species, island) 
 ```
 
@@ -122,6 +139,7 @@ dat %>% count(species, island)
 # option 1
 dat %>%
   mutate(mean_bm = mean(body_mass_g))
+
 ```
 ]
 
