@@ -28,9 +28,9 @@ navbar:
         - text: "Module5: Literate statistical programming: `knitr`"
           href: slides/Module5_Literate_statistical_programming_knitr.html
         - text: "Module6: R Markdown"
-          href: 
+          href: slides/Module6_markdown.html
         - text: "Module7: Version control Git and Github"
-          href: 
+          href: slides/Module7_Version_control_git_github.html
         - text: "Module7_extra: Extra class on git and Github"
           href: 
         - text: "Module8: R project"
@@ -53,9 +53,9 @@ navbar:
         - text: "Exercise 2: Tidyverse ggplot2 data visualisation - Solutions"
           href: practicals/2_datavisualisation_solution.html
         - text: "Exercise 3 : Building your own Rmarkdown document"
-          href: 
+          href: praticals/3_rmarkdown.html
         - text: "Exercise 3 : Building your own Rmarkdown document - Solutions"
-          href: 
+          href: practicals/3_rmarkdownsolution.html
         - text: "Exercise 4: Writing reproducible documents"
           href: 
         - text: "Exercise 4: Writing reproducible documents - Solutions"
