@@ -16,7 +16,7 @@ output:
 
 class: center
 ## Acknowledgements
-The content of this module are based on materials from:
+The contents of this module are based on materials from:
 
 .pull-right[
 ]

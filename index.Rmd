@@ -43,7 +43,7 @@ Anyone who carries out research either as student, or research staff and seeks g
 * Module 3: Dealing with data analysis in the `tidyverse` [[Module3](slides/Module3_Dealing_with_data_analysis.html) | [Exercise](practicals/1_datamanipulation.html) | [solutions](practicals/1_datamanipulation_solution.html) | [video]()]
 * Module 4: Dealing with data analysis in the `tidyverse` using `ggplot2` [[Module4](slides/Module4_Data_visualization_ggplot2.html) | [Exercise](practicals/2_datavisualisation.html) | [solutions](practicals/2_datavisualisation_solution.html) | [video]()]
 * Module 5: Literate statistical programming: `knitr` [[Module5](slides/Module5_Literate_statistical_programming_knitr.html) | [Exercise]() | [solutions]() | [video]()]
-* Module 6: R Markdown [[Module6](slides/Module6_markdown.html) | [practical]() | [solutions]() | [video]()]
+* Module 6: R Markdown [[Module6](slides/Module6_markdown.html) | [practical](practicals/3_rmarkdown.html) | [solutions](practicals/3_rmarkdownsolution.html) | [video]()]
 * Module 7: Version control Git and Github [[Module7]() | [practical]() | [solutions]() | [video]()]
 * Module 8: Extra class on git and Github [[Module7_extra]() | [practical](slides/Module7_extra.pdf) | [solutions]() | [video]()]
 * Module 9: R project [[Module]() | [practical]() | [video]()]
