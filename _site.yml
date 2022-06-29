@@ -32,7 +32,7 @@ navbar:
         - text: "Module7: Version control Git and Github"
           href: slides/Module7_Version_control_git_github.html
         - text: "Module7_extra: Extra class on git and Github"
-          href: 
+          href: slides/Module7_extra.pdf
         - text: "Module8: R project"
           href: 
         - text: "Module9: Reproducible: Good enough workflow"
@@ -56,8 +56,8 @@ navbar:
           href: practicals/3_rmarkdown.html
         - text: "Exercise 3 : Building your own Rmarkdown document - Solutions"
           href: practicals/3_rmarkdownsolution.html
-        - text: "Exercise 4: Writing reproducible documents"
-          href: 
+        - text: "Exercise 4: Reproducible: Good enough workflow"
+          href: practicals/Good_enough_workflow_Exercise.pdf
         - text: "Exercise 4: Writing reproducible documents - Solutions"
           href: 
         - text: "Exercise 5: Version control Git and Github"

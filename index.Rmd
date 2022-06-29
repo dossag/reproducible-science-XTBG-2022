@@ -47,7 +47,7 @@ Anyone who carries out research either as student, or research staff and seeks g
 * Module 7: Version control Git and Github [[Module7]() | [practical]() | [solutions]() | [video]()]
 * Module 8: Extra class on git and Github [[Module7_extra]() | [practical](slides/Module7_extra.pdf) | [solutions]() | [video]()]
 * Module 9: R project [[Module]() | [practical]() | [video]()]
-* Module 10: Reproducible: Good enough workflow [[Module]() | [video]()]
+* Module 10: Reproducible: Good enough workflow [[Module](slides/Module-9-Workflow-for-reproducible-work.html) | [practical](practicals/Good_enough_workflow_Exercise.pdf)|[practical file](practicals/bbmroData.csv)| [video]()]
 * Module 11: Extras (Writing article in R markdown, Quarto (If time permits)) [[Module]() | [video]()]
 
 # Requirements
