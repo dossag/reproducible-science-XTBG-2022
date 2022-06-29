@@ -33,8 +33,8 @@ navbar:
           href: slides/Module7_Version_control_git_github.html
         - text: "Module7_extra: Extra class on git and Github"
           href: slides/Module7_extra.pdf
-        - text: "Module8: R project"
-          href: 
+        - text: "Module8: R Studio Git and Github the trio"
+          href: slides/Module-8-R-Git-and-Github-the-trio.html
         - text: "Module9: Reproducible: Good enough workflow"
           href: 
         - text: "Module10: Reproducible: Good enough workflow"

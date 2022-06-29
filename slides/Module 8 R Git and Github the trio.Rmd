@@ -1,9 +1,9 @@
 ---
-title: "Reproducible science: Module 9"
-subtitle: "Workflow for reproducible work: Project"
+title: "Reproducible science: Module 8"
+subtitle: "R Git and Github: The trio"
 author: "[Gbadamassi G.O. Dossa](dossa@xtbg.org.cn)"
 institute: "Xishuangbanna Tropical Botanical Garden, XTBG-CAS"
-date: "2021/10/22 (updated: `r Sys.Date()`)"
+date: "2022/6/30 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -40,311 +40,113 @@ The content of this module are based on materials from:
 ]
 ---
 class: center
-# Brainstorm with class
+# Hard way of doing things is Git Bash
 .left[
-* What are critical elements needed?
+* Why shall we bother doing it hard?
+Simple because if ever R Studio fails, you know an alternative.
+The second reason is in presence of conflict you might have only one 
+option of doing it by hand.
 
-* What has been a problem?
-
-* What do you consider a need?
-]
----
-class: center
-# Consistent Themes
-.left[
-- Working with collaborators
-
-- Consistent uncluttered file structure
-
-- Ability to re-enter the project and quickly reorient
-
-- Knowing what to version control
-
-- Knowing version control
-
-- Testing new code without breaking original
-
-- Re-running things efficiently
-]
----
-class: center
-
-# What is a ***project***
-.left[
-A project is a well organized folder or directory.
-
-A project must contain all data related to it. Thus, we must have:
-
-- all data the project is based upon;
-
-- all the code (for cleaning and carrying out data analysis);
-
-- all necessary text that explains how the code talks to the data to render results;
-
-- any final reports derived from the project management;
-
-- any license entailed to the project;
-
-- a clear record of how the project has evolved through time (like lab notes, measurement protocol etc.)
-]
-
----
-
-class: center
-# A good Enough starting point
-.left[
-
-“Computing workflows need to follow the same practices as lab projects and notebooks, with organized data, documented steps, and the project structured for reproducibility, but researchers new to computing often don’t know where to start.”
----[Wilson et al. (2017)](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510)
-
-]
-
-
----
-class:center
-# Six core tenets of a good enough practice
-
-```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
-knitr::include_graphics('1 Goodenough.png')
-```
-
----
-class: center
-# Six core tenets of a good enough practice 2
-
-```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
-knitr::include_graphics('2 Goodenough.png')
-```
-
----
-class: center
-# Six core tenets of a good enough practice 3
-```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
-knitr::include_graphics('3 Goodenough.png')
-```
-
----
-class: center
-# Six core tenets of a good enough practice 4
-```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
-knitr::include_graphics('4 Goodenough.png')
-```
-
----
-class: center
-# Six core tenets of a good enough practice 5
-
-```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
-knitr::include_graphics('5 Goodenough.png')
-```
-
----
-class: center
-
-# Six core tenets of a good enough practice 6
- 
-```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
-knitr::include_graphics('6 Goodenough.png')
-```
-
----
-# Six core tenets of a good enough practice 7
- 
-```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
-knitr::include_graphics('7 Goodenough.png')
-```
-
-
-.center[
-[See magnificent tips from](https://simplystatistics.org/2016/04/21/writing/) from [Jeff leek](https://jtleek.com/)
-]
----
-# Six core tenets of a good enough practice 8
- 
-```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
-knitr::include_graphics('8 Goodenough.png')
-```
-
----
-# Six core tenets of a good enough practice 9
-
-.left[
-
-Below is graphically how the structure of a good enough project should look like]
-
-```{r, echo=FALSE,out.width='120%', fig.align='center', fig.cap='Drawing by Stella Schick', include=TRUE}
-knitr::include_graphics('9 Goodenough.png')
-```
-
-
-
----
-class: center
-# Let’s Build and Populate a Project
-
-.left[
-* Navigate to a directory
-
-* Make a folder for your project named whatever you want
-
-* cd into the project folder 
-
-* Start making folders with mkdir
-
-* Create 4 files using a text editor, or the touch command
-
-    - CITATION;
-  
-    - README;
-  
-    - LICENSE;
-  
-    - requirements.txt
+* I agree that the integration of R git and Github is powerful
 ]
 
 ---
 class: center
-# Have you succeeded? 
-Here is how it should look like on your git bash. Does yours look similar? 
+# Requirements to link Git and Github
+.left[
+- Set the same email for both Git and Github
+
+- Set the same username (ideally) for both Git and Github
+
+- Make sure you configure R Studio to open Git Bash
+
+- Make sure you connect your computer/R Studio with Github 
+  Doing so will not only allow communication between Git and Github but 
+  also to allow clicking to automate actions in R studion
+
+]
+---
+class: center
+
+# How to link your computer to your github **securely**
+.left[
+You need to set an SSH Key. 
+
+Please follow instructions below.
+]
+
+---
+class: center
+# Setting up git in R Studio
 
 ```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
-knitr::include_graphics('13 Goodenough.png')
+knitr::include_graphics('git github R studio ssh key1.png')
+```
+
+---
+class: center
+# Few basic git commands
+
+```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
+knitr::include_graphics('git github R studio ssh key2.png')
+```
+
+---
+class: center
+# How to create SSH key in R studio step 1
+```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
+knitr::include_graphics('git github R studio ssh key4.png')
+```
+
+---
+class: center
+
+# How to create SSH key in R studio step 2
+```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
+knitr::include_graphics('git github R studio ssh key5.png')
+```
+
+---
+class: center
+
+# How to create SSH key in R studio step 3
+```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
+knitr::include_graphics('git github R studio ssh key6.png')
 ```
 
 
 ---
 class: center
-# What goes in each part? – Data Folder
 
-.left[
-* Raw data
-
-  - Consider locking the file, or making read-only
-
-  - Never hand edit the file!
-
-* Metadata
-
-  - I have one .csv file from BMMRO
-]
-
----
-class: center
-# What goes in each part? – src Folder
-.left[
-* Two types of scripts
- 
-  - Individual analytical blocks 
- 
-      + reshapeData.R
- 
-      + runRegression.R
-
-* Controller file, e.g. runAll.R 
-
-* runAll.R may contain:
-  - source(reshapeData.R)
-  - source(runRegression.R)
-  - source(plotAnalysis.R)
-
-And can be called from a command prompt with: 
-R CMD BATCH –vanilla runAll.R runAll.rout &
-]
-
----
-class: center
-
-# What goes in each part? – results Folder
-
-.left[
-* Any “generated” result:
-  
-  - Intermediate results
-     
-      + Cleaned data
-      
-      + Simulated data
-  
-  - Final Results
-  
-      + Figures
-  
-      + Tables
-
-* For most projects, you’ll likely have sub-directories:
-
-* Results
-
-  - CleanedData
-
-  - Figures
-
-  - Tables
-]
-
----
-class: center
-
-# What goes in each part? - doc Folder
-
-.left[
-
-* Any text based documents:
-
-* If manually versioning, a changelog.txt file
-
-* projectNotebook.md (maybe Notepad or evernote…)
-
-* Manuscript (if using a version control, otherwise Google Docs)
-]
-
-
----
-class: center
-
-# What goes in each file?  
-.left[
-- The README: file provides an overview of the project as a whole
-
-  * Project’s title
-
-  * Brief description
-
-  * Up-to-date contact information
-
-  * An example of how to run the code
-
-  * How people can engage with the project
-    
-  * If you are looking for contributors
-
-- CITATION: Explains how to reference the project:
-  
-  * DOIs for code and data
-  
-  * DOI for project if using OSF
-  
-  * Manuscript [Example here](https://github.com/dib-lab/khmer/blob/master/CITATION)
-
-- LICENSE
-Explains the licensing, e.g. CC-BY, CC-ND, etc.
-
-
-]
----
-# Get a copy of a good enough practice
-You can get a template of a good enough Project structure as repository from [Rob Schick Github](https://github.com/robschick/goodEnough) 
+# How to create SSH key in R studio step 4
 ```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
-knitr::include_graphics('11 Goodenough.png')
+knitr::include_graphics('git github R studio ssh key7.png')
+```
+
+
+---
+class: center
+
+# How to create a new repository on github 
+```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
+knitr::include_graphics('git github R studio ssh key8.png')
 ```
 
 ---
-# Good enough project workflow practice
-[Bahamas Marine Mammal Research Organization (BMMRO) data](https://ecologicaldata.org/wiki/bahamas-marine-mammal-research-organization)
+class: center
+
+# How to clone the repository in R studio
 ```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
-knitr::include_graphics('10 Goodenough.png')
+knitr::include_graphics('git github R studio ssh key9.png')
 ```
 
+---
+class: center
+
+# How R studio looks like repo is cloned
+```{r, echo=FALSE,out.width='100%', fig.align='center', fig.cap='', include=TRUE}
+knitr::include_graphics('git github R studio ssh key10.png')
+```
 ---
 class: center, middle
 

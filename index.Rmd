@@ -45,10 +45,10 @@ Anyone who carries out research either as student, or research staff and seeks g
 * Module 5: Literate statistical programming: `knitr` [[Module5](slides/Module5_Literate_statistical_programming_knitr.html) | [Exercise]() | [solutions]() | [video]()]
 * Module 6: R Markdown [[Module6](slides/Module6_markdown.html) | [practical](practicals/3_rmarkdown.html) | [solutions](practicals/3_rmarkdownsolution.html) | [video]()]
 * Module 7: Version control Git and Github [[Module7]() | [practical]() | [solutions]() | [video]()]
-* Module 8: Extra class on git and Github [[Module7_extra]() | [practical](slides/Module7_extra.pdf) | [solutions]() | [video]()]
-* Module 9: R project [[Module]() | [practical]() | [video]()]
-* Module 10: Reproducible: Good enough workflow [[Module](slides/Module-9-Workflow-for-reproducible-work.html) | [practical](practicals/Good_enough_workflow_Exercise.pdf)|[practical file](practicals/bbmroData.csv)| [video]()]
-* Module 11: Extras (Writing article in R markdown, Quarto (If time permits)) [[Module]() | [video]()]
+* Module 7_extra: Extra class on git and Github [[Module7_extra]() | [practical](slides/Module7_extra.pdf) | [solutions]() | [video]()]
+* Module 8: R studio Git and Github the trio [[Module](slides/Module-8-R-Git-and-Github-the-trio.html) | [practical]() | [video]()]
+* Module 9: Reproducible: Good enough workflow [[Module](slides/Module-9-Workflow-for-reproducible-work.html) | [practical](practicals/Good_enough_workflow_Exercise.pdf)|[practical file](practicals/bbmroData.csv)| [video]()]
+* Module 10: Extras (Writing article in R markdown, Quarto (If time permits)) [[Module]() | [video]()]
 
 # Requirements
 

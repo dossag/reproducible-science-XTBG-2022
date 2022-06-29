@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Reproducible science: Module 8</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Gbadamassi G.O. Dossa" />
+    <script src="libs/header-attrs-2.14/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Reproducible science: Module 8
+]
+.subtitle[
+## R Git and Github: The trio
+]
+.author[
+### <a href="dossa@xtbg.org.cn">Gbadamassi G.O. Dossa</a>
+]
+.institute[
+### Xishuangbanna Tropical Botanical Garden, XTBG-CAS
+]
+.date[
+### 2022/6/30 (updated: 2022-06-30)
+]
+
+---
+
+
+class: center
+# Acknowledgements
+The content of this module are based on materials from:
+
+.pull-right[
+![Rob Schick](Rob Schick.jpg)
+]
+.pull-right[
+[Rob Schick's materials](https://nicholas.duke.edu/people/staff/schick-phd)
+]
+---
+class: center
+# Hard way of doing things is Git Bash
+.left[
+* Why shall we bother doing it hard?
+Simple because if ever R Studio fails, you know an alternative.
+The second reason is in presence of conflict you might have only one 
+option of doing it by hand.
+
+* I agree that the integration of R git and Github is powerful
+]
+
+---
+class: center
+# Requirements to link Git and Github
+.left[
+- Set the same email for both Git and Github
+
+- Set the same username (ideally) for both Git and Github
+
+- Make sure you configure R Studio to open Git Bash
+
+- Make sure you connect your computer/R Studio with Github 
+  Doing so will not only allow communication between Git and Github but 
+  also to allow clicking to automate actions in R studion
+
+]
+---
+class: center
+
+# How to link your computer to your github **securely**
+.left[
+You need to set an SSH Key. 
+
+Please follow instructions below.
+]
+
+---
+class: center
+# Setting up git in R Studio
+
+&lt;img src="git github R studio ssh key1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+# Few basic git commands
+
+&lt;img src="git github R studio ssh key2.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+# How to create SSH key in R studio step 1
+&lt;img src="git github R studio ssh key4.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+
+# How to create SSH key in R studio step 2
+&lt;img src="git github R studio ssh key5.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+
+# How to create SSH key in R studio step 3
+&lt;img src="git github R studio ssh key6.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: center
+
+# How to create SSH key in R studio step 4
+&lt;img src="git github R studio ssh key7.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: center
+
+# How to create a new repository on github 
+&lt;img src="git github R studio ssh key8.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+
+# How to clone the repository in R studio
+&lt;img src="git github R studio ssh key9.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center
+
+# How R studio looks like repo is cloned
+&lt;img src="git github R studio ssh key10.png" width="100%" style="display: block; margin: auto;" /&gt;
+---
+class: center, middle
+
+# Thank you for listening!
+Any questions now or email me at [**dossa@xtbg.org.cn**](http://people.ucas.edu.cn/~Dossa?language=en)
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr/), and [R Markdown](https://rmarkdown.rstudio.com).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
