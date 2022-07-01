@@ -1,0 +1,204 @@
+---
+title: "writing report exercise"
+author: "Gbadamassi G.O. Dossa"
+date: '2022-06-30'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+We are trying to follow [Dr Peng's](https://rdpeng.org/) writing on [R progrmming for data science book](https://leanpub.com/rprogramming) with an R markdown file. Researchers were interested in the following question.Please note that most of the text are actually from the book mentioned above. Only chapters 6 and 7 of the book are covered here.
+
+## Scientific question
+"Not every data analysis starts with a very specific or coherent question. But the more effort you can put into coming up with a reasonable question, the less effort you’ll spend having to filter through a lot of stuff. Because defining
+a question is the most powerful dimension reduction
+tool you can ever employ". Dr. Peng.
+For our example the question is *can I automatically detect emails that are SPAM or not?*
+
+This question can be taken as a data analysis question by asking rather *can I use quantitative characteristics of the emails themselves to classify them as spam?*
+
+In other to answer this question, there are two types of data to gather: (i) getting an ideal dataset or (ii) The Real Dataset.
+
+Here, we won't be able to get a dataset of all emails from google centers but  luckily as the the author mentioned there is a data from UCI Machine learning repository called [**kernlabpackage**](https://cran.r-project.org/web/packages/kernlab/index.html).
+
+
+```{r}
+library(kernlab)
+data(spam)
+dat<-spam
+dim(dat)[1]
+str(spam[, 1:5])
+```
+
+This dataset consists of `r dim(dat)[1]-1` observations with `r dim(dat)[2]` variables.
+
+
+# Data analysis
+
+## Splitting the Dataset
+
+Our data set, again, was from this UCI Machine Learning Repository, which had already been cleaned up. The idea is that we’re going to use part of the test of the data set to build our model, and then we’re going to use another part of the data set which is independent of the first part to actually determine how good our model is kind of making a prediction.
+
+```{r}
+library(kernlab)
+data(spam)
+## Perform the subsampling
+set.seed(3435)
+trainIndicator = rbinom(4601, size = 1, prob = 0.5)
+table(trainIndicator)
+```
+
+Here I’m a taking a random half of the data set, so I’m flipping a coin with the rbinom() function, to generate a random kind of coin flip with probability of half, so that’ll separate the the data set into two pieces. You can see that roughly 2000, about 2314, are going to be in one half and 2287 will be in the other half. And so the training set will be one set and the test set will be another set of data.
+
+```{r}
+trainSpam = spam[trainIndicator == 1, ]
+testSpam = spam[trainIndicator == 0, ]
+```
+
+## Exploratory Data Analysis
+
+The first thing we’re going to want to do is a little bit of exploratory data analysis. Given that we have not looked at this data set yet, it would be useful to look at what are the data, what did the data look like, what’s the distribution of the data, what are the relationships between the variables.
+We want to look at basic summaries, one dimensional, two dimensional summaries of the data and we want to check for is there any missing data, why is there missing data, if there is, create some exploratory plots and do a little exploratory analyses.
+
+we do our exploratory analysis and as we build our model, all that’s going to be done in the training data set. And if you look at the column names of the
+dataset, you can see that they’re all just words essentially.
+
+```{r}
+head(names(trainSpam), 20)
+
+```
+
+You can see the word “make” does not appear in that first email and, and the word “mail” does not appear. These are all basically frequency counts, or frequencies of words within each of the emails. If we look at the training data set and look at the outcome, we see that 906 of the emails are spam, are classified as spam.
+
+```{r}
+table(trainSpam$type)
+```
+
+And the other 1381 are classified as non-spam. This is what we’re going to use to build our model for predicting the spam emails. We can make some plots and we can compare, what are the frequencies of certain characteristics between
+the spam and the non spam emails. Here we’re looking at a variable called capitalAve, the average number of capital letters
+
+```{r}
+boxplot(capitalAve ~ type, data = trainSpam)
+```
+
+
+And, you can see that it’s difficult to look at this picture, because the data are highly skewed. And so, in these kinds of situations it’s often useful to just look at the log transformation of the variable. Here I’m going to to take the
+base ten log of the variable, and compare them to spam and nonspam. Since there are a lot of zeros in this particular variable, taking the log of zero doesn’t really make sense. We’ll just add 1 to that variable, just so we can take the log
+and get a rough sense of what the data look like. Typically, you wouldn’t want to just add 1 to a variable just because. But since we’re just exploring the data, making exploratory plots, it’s okay to do that in this case.
+
+```{r}
+boxplot(log10(capitalAve + 1) ~ type, data = trainSpam)
+```
+
+Here you can see clearly that the spam emails have a much higher rate of these capital letters than the non spam emails, and of course, if you’ve ever seen spam emails, you’re probably familiar with that phenomenon. And so that’s one useful relationship to see there.
+We can look at pairwise relationships between the different variables in the plots. Here I’ve got a pairs plot of the first four variables, and this is the log transformation of each of the variables.
+
+```{r}
+pairs(log10(trainSpam[, 1:4] + 1))
+```
+
+And you can see that some of them are correlated, some of them are not particularly correlated, and that’s useful to know.
+
+We can explore the predictors space a little bit more by doing a hierarchical cluster analysis, and so this is a first cut at trying to do that with the hclust function in R. I plotted the Dendrogram just to see how what predictors or what words or characteristics tend to cluster together.
+
+```{r}
+hCluster = hclust(dist(t(trainSpam[, 1:57])))
+plot(hCluster)
+
+```
+
+It’s not particularly helpful at this point, although it does separate out this one variable, capital total. But if you recall, the clustering algorithms can be sensitive to any skewness in the distribution of the individual variables, so it may be useful to redo the clustering analysis after a transformation
+of the predictor space.
+
+```{r}
+hClusterUpdated = hclust(dist(t(log10(trainSpam[, 1:55] +1))))
+plot(hClusterUpdated)
+
+```
+
+Here I’ve taken a log transformation of the predictors in the training data set, and again, I’ve added one to each one, just to avoid taking the log of zero. And now you can see the dendrogram a little bit more interesting. It’s separated out a few clusters and this captialAve is one kind of cluster all by itself. There’s another cluster that includes “you will” or “your”.
+
+## Statistical Modeling
+
+Here we’re going to just do a very basic statistical model. What we’re going to do is we’re going to go through each of the variables in the data set and try to fit a generalize linear model, in this case a logistic regression, to see if we
+can predict if an email is spam or not by using just a single variable.
+
+Here, using the reformulate function to create a formula that includes the response, which is just the type of email and one of the variables of the data set, and we’re just going to cycle through all the variables in this data set
+using this for-loop to build a logistic regression model, and then subsequently calculate the cross validated error rate of predicting spam emails from a single variable.
+
+```{r, warning=FALSE, message=FALSE}
+trainSpam$numType = as.numeric(trainSpam$type) - 1
+costFunction = function(x, y) sum(x != (y > 0.5))
+cvError = rep(NA, 55)
+library(boot)
+for (i in 1:55) {
+lmFormula = reformulate(names(trainSpam)[i], response
+= "numType")
+glmFit = glm(lmFormula, family = "binomial", data = trainSpam)
+cvError[i] = cv.glm(trainSpam, glmFit, costFunction, 
+2)$delta[2]
+}
+## Which predictor has minimum cross-validated error?
+names(trainSpam)[which.min(cvError)]
+```
+
+Once we’ve done this, we’re going to try to figure out which of the individual variables has the minimum cross validated error rate. And so we can just go, and you can take this vector of results, this CV error, and just figure out which
+one is the minimum.
+
+It turns out that the predictor that has the minimum cross validated error rate is this variable called charDollar. This is an indicator of the number of dollar signs in the email. Keep in mind this is a very simple model.
+
+In a logistic regression we don’t get specific 0/1 classifications of each of the messages, we get a probability that a message is going to be spam or not. Then we have to take this continuous probability, which ranges between 0 and 1,
+and determine at what point, at what cutoff, do we think that the email is spam. We’re just going to draw the cut off here at 0.5, so if the probability is above 50%, we’re just going to call it a spam email.
+
+```{r}
+## Use the best model from the group
+predictionModel = glm(numType ~ charDollar, family = "binomial", data = trainSpam)
+## Get predictions on the test set
+predictionTest = predict(predictionModel, testSpam)
+predictedSpam = rep("nonspam", dim(testSpam)[1])
+## Classify as `spam' for those with prob > 0.5
+predictedSpam[predictionModel$fitted > 0.5] = "spam"
+
+```
+
+Once we’ve created our classification, we can take a look at the predicted values from our model, and then compare them with the actual values from the test data set, because we know which was spam, and which was not. Here’s the
+classification table that we get from the predicted and the the real values.
+
+```{r}
+table(predictedSpam, testSpam$type)
+```
+
+Now we can just calculate the error rate. The mistakes that we made are on the off diagonal elements of this table, so 61 and 458.
+
+```{r}
+## Error rate
+(61 + 458)/(1346 + 458 + 61 + 449)
+
+```
+
+So, 61 were classified as spam that were not actually spam, and 458 were classified as non spam but actually were spam. So we calculate this error rate as about 22%
+
+# Interpreting Results
+
+The fraction of characters that are dollar signs can be used to predict if an email is spam. Maybe we decide that anything with more than 6.6% dollar signs is
+classified as spam. More dollar signs always means more spam under our prediction model. And for our model in the test data set, the error rate was 22.4%.
+
+
+# Challenge the Findings
+
+Once you’ve done your analysis and you’ve developed your interpretation, it’s important that you, yourself, challenge all the results that you’ve found. Because if you don’t do it, someone else is going to do it once they see your analysis, and so you might as well get one step ahead of everyone by doing it yourself first. It’s good to challenge everything, the whole process by which you’ve gone through this problem. Is the question even a valid question to ask? Where did the data come from? How did you get the data? How did you process the data? How did you do the analysis and draw any conclusions?
+
+# Synthesizing Results
+
+Once you’ve interpreted your results, you’ve done the analysis, you’ve interpreted your results, you’ve drawn some conclusions, and you’ve challenged all your findings, you’re going to need to synthesize the results and write them up. Synthesis is very important because typically in any data analysis, there are going to be many, many, many things that you did. And when you present them to another person or to a group you’re going to want to have winnowed it
+down to the most important aspects to tell a coherent story. Typically you want to lead with the question that you were trying to address. If people understand the question then they can draw up a context in their mind, and have a better
+understanding of the framework in which you’re operating. That will lead to what kinds of data are necessary, are appropriate for this question, what kinds of analyses would be appropriate. You can summarize the analyses as you’re telling the story.
+
+In our example, the basic question was “Can we use quantitative characteristics of the emails to classify them as spam or ham?” Our approach was rather than try to get the ideal data set from all Google servers, we collected some data from the UCI machine learning repository and created training and test sets from this data set. We explored some relationships between the various predictors. We decided to use a logistic regression model on the training set and chose our single variable predictor by using cross validation. When we applied this model to the test set it was 78% accurate. The interpretation of our results was that
+basically, more dollar signs seemed to indicate an email was more likely to be spam, and this seems reasonable. We’ve all seen emails with lots of dollar signs in them trying to sell you something. This is both reasonable and understandable. Of course, the results were not particularly great as 78% test set accuracy is not that good for most prediction algorithms. We probably could do much better if we included more variables or if we included a more
+sophisticated model, maybe a non-linear model. These are the kinds of things that you want to outline to people as you go through data analysis and present it to other people.
+

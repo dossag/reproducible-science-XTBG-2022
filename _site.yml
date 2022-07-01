@@ -36,11 +36,9 @@ navbar:
         - text: "Module8: R Studio Git and Github the trio"
           href: slides/Module-8-R-Git-and-Github-the-trio.html
         - text: "Module9: Reproducible: Good enough workflow"
-          href: 
-        - text: "Module10: Reproducible: Good enough workflow"
-          href: 
-        - text: "Module11: Extras (Writing article in R markdown, Quarto (If time permits))"
-          href: 
+          href: slides/Module-9-Workflow-for-reproducible-work.html
+        - text: "Module10: Extras (Writing report in R markdown, Quarto (If time permits))"
+          href: practicals/writing-report-excercise.html
         
     - text: "Worksheets"
       menu:
@@ -58,22 +56,12 @@ navbar:
           href: practicals/3_rmarkdownsolution.html
         - text: "Exercise 4: Reproducible: Good enough workflow"
           href: practicals/Good_enough_workflow_Exercise.pdf
-        - text: "Exercise 4: Writing reproducible documents - Solutions"
-          href: 
         - text: "Exercise 5: Version control Git and Github"
-          href: 
-        - text: "Exercise 5: Version control Git and Github - Solutions"
-          href:
-        - text: "Exercise 6 data bbrom"
-          href: 
-        - text: "Exercise 7:"
-          href: 
-        - text: "Exercise 8:"
-          href: 
-        - text: "Exercise 9:"
-          href: 
-        - text: "Exeercise 10:"
-          href: 
+          href: practicals/4_versioncontrol.html
+        - text: "Exercise 6: Writing report in R markdown"
+          href: practicals/writing-report-excercise.html
+        - text: "Exercise 6: Writing report in R markdown - Solutions"
+          href: practicals/writing-report-excercise_solution.html
     - icon: fab fa-github
       href: https://github.com/dossag
 output: distill::distill_article
