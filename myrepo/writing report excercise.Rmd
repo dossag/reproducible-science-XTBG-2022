@@ -11,20 +11,19 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
-We are trying to follow Dr Peng writing report book with an R markdown file.
-The researchers were interested in the following question.
+We are trying to follow [Dr Peng's](https://rdpeng.org/) writing on [R progrmming for data science book](https://leanpub.com/rprogramming) with an R markdown file. Researchers were interested in the following question.Please note that most of the text are actually from the book mentioned above. Only chapters 6 and 7 of the book are covered here.
 
-# Scientific question
-"Not every data analysis starts with a very specific or coherent question. But the more effort you can put into coming up with a reasonable question, the less effort you’ll spend having to filter through a lot of stuff. Because defining
+## Scientific question
+"Not every data analysis starts with a very specific or coherent question. But the more effort you can put into coming up with a reasonable question, the less effort you’ll spend having to filter through a lot of stuff. Because defining
 a question is the most powerful dimension reduction
 tool you can ever employ". Dr. Peng.
 For our example the question is *can I automatically detect emails that are SPAM or not?*
 
-This question can be taken as a data analysis question by asking *can I use quantitative characteristics of the emails themselves to classify them as spam?*
+This question can be taken as a data analysis question by asking rather *can I use quantitative characteristics of the emails themselves to classify them as spam?*
 
-In other to answer the question, there is two options: (i) getting an ideal dataset or (ii) The Real Dataset.
+In other to answer this question, there are two types of data to gather: (i) getting an ideal dataset or (ii) The Real Dataset.
 
-For this case , we won't be able to get a dataset from google centers but there is a data from UCI Machine learning repository called [**kernlabpackage**](https://cran.r-project.org/web/packages/kernlab/index.html).
+Here, we won't be able to get a dataset of all emails from google centers but  luckily as the the author mentioned there is a data from UCI Machine learning repository called [**kernlabpackage**](https://cran.r-project.org/web/packages/kernlab/index.html).
 
 
 ```{r}

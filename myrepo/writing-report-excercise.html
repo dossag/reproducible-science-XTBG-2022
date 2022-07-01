@@ -372,13 +372,15 @@ pre code {
 
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
-<p>We are trying to follow Dr Peng writing report book with an R
-markdown file. The researchers were interested in the following
-question.</p>
-</div>
-<div id="scientific-question" class="section level1">
-<h1>Scientific question</h1>
-<p>“Not every data analysis starts with a very specific or coherent
+<p>We are trying to follow <a href="https://rdpeng.org/">Dr Peng’s</a>
+writing on <a href="https://leanpub.com/rprogramming">R progrmming for
+data science book</a> with an R markdown file. Researchers were
+interested in the following question.Please note that most of the text
+are actually from the book mentioned above. Only chapters 6 and 7 of the
+book are covered here.</p>
+<div id="scientific-question" class="section level2">
+<h2>Scientific question</h2>
+<p>“Not every data analysis starts with a very specific or coherent
 question. But the more effort you can put into coming up with a
 reasonable question, the less effort you’ll spend having to filter
 through a lot of stuff. Because defining a question is the most powerful
@@ -386,12 +388,13 @@ dimension reduction tool you can ever employ”. Dr. Peng. For our example
 the question is <em>can I automatically detect emails that are SPAM or
 not?</em></p>
 <p>This question can be taken as a data analysis question by asking
-<em>can I use quantitative characteristics of the emails themselves to
-classify them as spam?</em></p>
-<p>In other to answer the question, there is two options: (i) getting an
-ideal dataset or (ii) The Real Dataset.</p>
-<p>For this case , we won’t be able to get a dataset from google centers
-but there is a data from UCI Machine learning repository called <a href="https://cran.r-project.org/web/packages/kernlab/index.html"><strong>kernlabpackage</strong></a>.</p>
+rather <em>can I use quantitative characteristics of the emails
+themselves to classify them as spam?</em></p>
+<p>In other to answer this question, there are two types of data to
+gather: (i) getting an ideal dataset or (ii) The Real Dataset.</p>
+<p>Here, we won’t be able to get a dataset of all emails from google
+centers but luckily as the the author mentioned there is a data from UCI
+Machine learning repository called <a href="https://cran.r-project.org/web/packages/kernlab/index.html"><strong>kernlabpackage</strong></a>.</p>
 <pre class="r"><code>library(kernlab)
 data(spam)
 dat&lt;-spam
@@ -405,6 +408,7 @@ dim(dat)[1]</code></pre>
 ##  $ num3d  : num  0 0 0 0 0 0 0 0 0 0 ...
 ##  $ our    : num  0.32 0.14 1.23 0.63 0.63 1.85 1.92 1.88 0.61 0.19 ...</code></pre>
 <p>This dataset consists of 4600 observations with 58 variables.</p>
+</div>
 </div>
 <div id="data-analysis" class="section level1">
 <h1>Data analysis</h1>
